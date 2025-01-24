@@ -1,0 +1,6 @@
+compose:
+  transforms:
+    - autoaugment:
+        policy: imagenet
+        interpolation: nearest
+    - totensor: {}

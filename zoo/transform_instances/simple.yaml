@@ -1,0 +1,6 @@
+compose:
+  transforms:
+    - totensor: {}
+    - randomflip:
+        prob_hflip: 0.5
+        prob_vflip: 0.5

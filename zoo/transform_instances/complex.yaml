@@ -1,0 +1,11 @@
+compose:
+  transforms:
+    - autoaugment:
+        policy: imagenet
+        interpolation: nearest
+    - totensor: {}
+    - randomflip:
+        prob_hflip: 0.5
+        prob_vflip: 0.5
+    - colorjitter:
+        contrast: 0.3
