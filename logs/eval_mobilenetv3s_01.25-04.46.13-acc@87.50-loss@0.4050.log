@@ -1,4 +1,4 @@
-Log file created at 06:40:42 01-24 with path: logs/01.24-06:40:19-eval.log
+Log file created at 05:04:15 01-25 with path: logs/01.25-04.46.13-acc@87.50-loss@0.4050-eval.log
 System information:
 +-----------------------+------------------------------------+
 |    CPU Physical Cores |                                 16 |
@@ -11,9 +11,9 @@ System information:
 +-----------------------+------------------------------------+
 |             RAM Total |                           10.70 GB |
 +-----------------------+------------------------------------+
-|         RAM Available |                            7.60 GB |
+|         RAM Available |                            8.08 GB |
 +-----------------------+------------------------------------+
-|              RAM Used |                            2.80 GB |
+|              RAM Used |                            2.34 GB |
 +-----------------------+------------------------------------+
 |            GPU Device | NVIDIA GeForce RTX 4060 Laptop GPU |
 +-----------------------+------------------------------------+
@@ -42,12 +42,29 @@ System information:
 |    TorchAudio Version |                        2.4.1+cu121 |
 +-----------------------+------------------------------------+
 Evaluation settings:
-{'data': {'num_workers': 0, 'root': 'dataset', 'transform': {'totensor': {}}},
+{'data': {'num_workers': 8, 'root': 'dataset', 'transform': {'totensor': {}}},
  'evaluator': {'acc': True},
- 'experiment': {'device': 'cuda', 'experiment_name': '01.24-06:40:19-eval'},
- 'logger': {'log_save_path': PosixPath('logs/01.24-06:40:19-eval.log')},
- 'model': {'checkpoint_path': 'ckpts/01.24-06:21:39/01.24-06:36:10-Accuracy@77.0833-Loss@0.6221.pt',
-           'model_name': 'resnet18'}}
-+----------+---------+
-| Accuracy | 78.7037 |
-+----------+---------+
+ 'experiment': {'device': 'cuda',
+                'experiment_name': '01.25-04.46.13-acc@87.50-loss@0.4050-eval'},
+ 'logger': {'log_save_path': PosixPath('logs/01.25-04.46.13-acc@87.50-loss@0.4050-eval.log')},
+ 'model': {'checkpoint_path': 'ckpts/mobilenetv3s_150e_8b_complex_sgd_1e-3_0.95_wd_1e-4_focalloss_5.0_2.0/01.25-04.46.13-acc@87.50-loss@0.4050.pt',
+           'model_name': 'mobilenet_v3_s'}}
++------------------------+---------+
+|          acc_daxuanniu | 94.4444 |
++------------------------+---------+
+|           acc_fangjian | 61.5385 |
++------------------------+---------+
+|      acc_fangxiangjian |      80 |
++------------------------+---------+
+| acc_sandianyuanxuanniu | 92.8571 |
++------------------------+---------+
+|        acc_tuoyuanjian | 46.6667 |
++------------------------+---------+
+|        acc_xiaoxuanniu | 77.7778 |
++------------------------+---------+
+|            acc_youjian | 71.4286 |
++------------------------+---------+
+|            acc_yuanpan | 76.4706 |
++------------------------+---------+
+|                acc_avg | 75.9259 |
++------------------------+---------+

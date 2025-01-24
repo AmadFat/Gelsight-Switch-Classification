@@ -20,7 +20,7 @@ ckpt_dir = Path(__file__).parent / 'ckpts'
 ckpt_dir.mkdir(parents=True, exist_ok=True)
 log_dir = Path(__file__).parent / 'logs'
 log_dir.mkdir(parents=True, exist_ok=True)
-tensorboard_dir = log_dir / 'tbevents'
+tensorboard_dir = data_dir.parent / 'tbevents'
 tensorboard_dir.mkdir(parents=True, exist_ok=True)
 
 try: 

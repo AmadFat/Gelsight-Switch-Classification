@@ -18,7 +18,7 @@ def parse_train_args():
     parser = argparse.ArgumentParser(description="Gelsight-Switch-Classification training script")
     
     # Experiment settings
-    parser.add_argument('-e', '--exp', '--exp-name', type=str, default=datetime.datetime.now().strftime("%m.%d-%H:%M:%S"), help='Experiment name')
+    parser.add_argument('-e', '--exp', '--exp-name', type=str, default=datetime.datetime.now().strftime("%m.%d-%H.%M.%S"), help='Experiment name')
     parser.add_argument('-d', '--device', type=str, required=True, choices=['cpu', 'cuda'], help='cpu / cuda')
     parser.add_argument('--max-epochs', type=int, default=10, help='Max training epochs')
     parser.add_argument('--seed', type=int, required=False, help='Global random seed')
@@ -193,7 +193,7 @@ def parse_eval_args():
     parser = argparse.ArgumentParser(description="Gelsight-Switch-Classification evaluation script")
 
     # Experiment settings
-    parser.add_argument('-e', '--eval', '--eval-name', type=str, default=datetime.datetime.now().strftime("%m.%d-%H:%M:%S")+"-eval", help='Evaluation name')
+    parser.add_argument('-e', '--eval', '--eval-name', type=str, default=datetime.datetime.now().strftime("%m.%d-%H.%M.%S")+"-eval", help='Evaluation name')
     parser.add_argument('-d', '--device', type=str, required=True, choices=['cpu', 'cuda'], help='cpu / cuda')
     parser.add_argument('--log-dir', '--log-save-dir', type=str, default='logs', help='Log save directory')
 

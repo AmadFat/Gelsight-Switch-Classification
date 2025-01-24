@@ -10,7 +10,7 @@ if __name__ == '__main__':
     strlogger.update_log(log)
     device = eval_dict['experiment']['device']
     transform = parse_transform(eval_dict['data']['transform'])
-    test_loader, num_classes = get_test_loader(
+    test_loader, num_classes, dictionary = get_test_loader(
         root=eval_dict['data']['root'],
         transform=transform,
         num_workers=eval_dict['data']['num_workers']
@@ -19,4 +19,4 @@ if __name__ == '__main__':
     model.load_state_dict(torch.load(eval_dict['model']['checkpoint_path'], map_location='cpu', weights_only=True), strict=True)
     model = model.to(device)
     evaluator = parse_evaluator(eval_dict['evaluator'], criterion=None)
-    test(model=model, loader=test_loader, evaluator=evaluator, logger=strlogger, device=device)
+    test(model=model, loader=test_loader, evaluator=evaluator, logger=strlogger, device=device, dictionary=dictionary)

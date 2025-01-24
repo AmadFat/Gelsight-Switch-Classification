@@ -15,7 +15,7 @@ if __name__ == '__main__':
     device = train_dict['experiment']['device']
     transform_train = parse_transform(train_dict['transform']['train'])
     transform_val = parse_transform(train_dict['transform']['val']) if 'val' in train_dict['transform'] else None
-    train_loader, val_loader, num_classes = get_train_val_loaders(
+    train_loader, val_loader, num_classes, dictionary = get_train_val_loaders(
         root=train_dict['data']['root'],
         transform_train=transform_train, transform_val=transform_val,
         split_ratio=train_dict['data']['split_ratio'] if train_dict['experiment']['val'] else [1, 0],
@@ -34,5 +34,5 @@ if __name__ == '__main__':
                         grad_clip=train_dict['optimizer'].get('grad_clip'), lr_scheduler=scheduler,
                         logger=strlogger, device=device)
         if train_dict['experiment']['val'] and epoch_idx % train_dict['experiment']['val_interval'] == 0:
-            val(model=model, loader=val_loader, evaluator=evaluator, logger=strlogger, device=device,
+            val(model=model, loader=val_loader, evaluator=evaluator, logger=strlogger, device=device, dictionary=dictionary,
                 save_dir=train_dict['experiment']['ckpt_save_dir'] if train_dict['experiment']['save'] else None)

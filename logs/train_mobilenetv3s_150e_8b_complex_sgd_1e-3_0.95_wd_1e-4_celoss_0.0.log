@@ -1,0 +1,717 @@
+Log file created at 05:25:58 01-25 with path: logs/mobilenetv3s_150e_8b_complex_sgd_1e-3_0.95_wd_1e-4_celoss_0.0.log
+System information:
++-----------------------+------------------------------------+
+|    CPU Physical Cores |                                 16 |
++-----------------------+------------------------------------+
+|     CPU Logical Cores |                                 32 |
++-----------------------+------------------------------------+
+|     CPU Max Frequency |                           0.00 MHz |
++-----------------------+------------------------------------+
+| CPU Current Frequency |                        2419.20 MHz |
++-----------------------+------------------------------------+
+|             RAM Total |                           10.70 GB |
++-----------------------+------------------------------------+
+|         RAM Available |                            8.06 GB |
++-----------------------+------------------------------------+
+|              RAM Used |                            2.37 GB |
++-----------------------+------------------------------------+
+|            GPU Device | NVIDIA GeForce RTX 4060 Laptop GPU |
++-----------------------+------------------------------------+
+|             GPU Count |                                  1 |
++-----------------------+------------------------------------+
+|      GPU Memory Total |                            8.00 GB |
++-----------------------+------------------------------------+
+|   GPU Memory Reserved |                            0.00 GB |
++-----------------------+------------------------------------+
+|          CUDA Version |                               12.1 |
++-----------------------+------------------------------------+
+|              Hostname |                            AmadFat |
++-----------------------+------------------------------------+
+|                    OS |                              Linux |
++-----------------------+------------------------------------+
+|            OS Release | 5.15.167.4-microsoft-standard-WSL2 |
++-----------------------+------------------------------------+
+|            OS Version | #1 SMP Tue Nov 5 00:21:55 UTC 2024 |
++-----------------------+------------------------------------+
+|        Python Version |                             3.9.21 |
++-----------------------+------------------------------------+
+|       PyTorch Version |                        2.4.1+cu121 |
++-----------------------+------------------------------------+
+|   TorchVision Version |                       0.19.1+cu121 |
++-----------------------+------------------------------------+
+|    TorchAudio Version |                        2.4.1+cu121 |
++-----------------------+------------------------------------+
+Experiment settings:
+{'criterion': {'criterion_name': 'celoss', 'label_smoothing': 0.0},
+ 'data': {'batch_size': 8,
+          'num_workers': 8,
+          'root': 'dataset',
+          'split_ratio': [0.95, 0.05]},
+ 'evaluator': {'acc': True, 'loss': True},
+ 'experiment': {'ckpt_save_dir': PosixPath('ckpts/mobilenetv3s_150e_8b_complex_sgd_1e-3_0.95_wd_1e-4_celoss_0.0'),
+                'deterministic': False,
+                'device': 'cuda',
+                'experiment_name': 'mobilenetv3s_150e_8b_complex_sgd_1e-3_0.95_wd_1e-4_celoss_0.0',
+                'max_epochs': 150,
+                'save': True,
+                'seed': 3407,
+                'val': True,
+                'val_interval': 5},
+ 'logger': {'log_save_path': PosixPath('logs/mobilenetv3s_150e_8b_complex_sgd_1e-3_0.95_wd_1e-4_celoss_0.0.log'),
+            'tb_save_path': PosixPath('tbevents/mobilenetv3s_150e_8b_complex_sgd_1e-3_0.95_wd_1e-4_celoss_0.0'),
+            'train_print_interval': 50,
+            'use_tensorboard': True,
+            'window_metric': 50,
+            'window_time_stamp': 50},
+ 'model': {'dropout': 0.0,
+           'last_fc_bias_init': 'const',
+           'last_fc_weight_init': 'const',
+           'model_name': 'mobilenet_v3_s',
+           'norm_layer': 'batchnorm',
+           'weights': 'default'},
+ 'optimizer': {'grad_clip': 1.0,
+               'lr': 0.001,
+               'momentum': 0.95,
+               'optimizer_name': 'sgd',
+               'weight_decay': 0.0001},
+ 'scheduler': {'T_0': 10,
+               'T_mult': 2,
+               'eta_min': 1e-05,
+               'scheduler_name': 'cosinelr'},
+ 'transform': {'train': {'compose': {'transforms': [{'autoaugment': {'interpolation': 'nearest',
+                                                                     'policy': 'imagenet'}},
+                                                    {'totensor': {}},
+                                                    {'randomflip': {'prob_hflip': 0.5,
+                                                                    'prob_vflip': 0.5}},
+                                                    {'colorjitter': {'contrast': 0.3}}]}},
+               'val': {'totensor': {}}}}
+05:26:08 01-25 [epoch 1 train] [step 1/114] [eta N/A]: loss 2.0794(2.0794) | lr 1.0000e-03
+05:26:10 01-25 [epoch 1 train] [step 50/114] [eta 0:00:02]: loss 2.0287(2.0287) | lr 1.0000e-03
+05:26:12 01-25 [epoch 1 train] [step 100/114] [eta 0:00:00]: loss 1.9780(1.9272) | lr 1.0000e-03
+05:26:13 01-25 [epoch 1 train] [step 114/114] [eta 0:00:00]: loss 1.9605(1.8944) | lr 1.0000e-03
+05:26:13 01-25 [epoch 2 train] [step 1/114] [eta 0:00:06]: loss 1.9896(1.8974) | lr 9.9952e-04
+05:26:16 01-25 [epoch 2 train] [step 50/114] [eta 0:00:03]: loss 1.7369(1.7369) | lr 9.7577e-04
+05:26:18 01-25 [epoch 2 train] [step 100/114] [eta 0:00:00]: loss 1.7044(1.6719) | lr 9.7577e-04
+05:26:19 01-25 [epoch 2 train] [step 114/114] [eta 0:00:00]: loss 1.6933(1.6504) | lr 9.7577e-04
+05:26:19 01-25 [epoch 3 train] [step 1/114] [eta 0:00:06]: loss 1.8319(1.6553) | lr 9.7437e-04
+05:26:21 01-25 [epoch 3 train] [step 50/114] [eta 0:00:03]: loss 1.4737(1.4737) | lr 9.0546e-04
+05:26:24 01-25 [epoch 3 train] [step 100/114] [eta 0:00:00]: loss 1.4297(1.3857) | lr 9.0546e-04
+05:26:24 01-25 [epoch 3 train] [step 114/114] [eta 0:00:00]: loss 1.4194(1.3806) | lr 9.0546e-04
+05:26:25 01-25 [epoch 4 train] [step 1/114] [eta 0:00:06]: loss 1.5225(1.3825) | lr 9.0327e-04
+05:26:27 01-25 [epoch 4 train] [step 50/114] [eta 0:00:03]: loss 1.2480(1.2480) | lr 7.9595e-04
+05:26:29 01-25 [epoch 4 train] [step 100/114] [eta 0:00:00]: loss 1.2106(1.1732) | lr 7.9595e-04
+05:26:30 01-25 [epoch 4 train] [step 114/114] [eta 0:00:00]: loss 1.1892(1.1070) | lr 7.9595e-04
+05:26:30 01-25 [epoch 5 train] [step 1/114] [eta 0:00:05]: loss 1.2416(1.1148) | lr 7.9319e-04
+05:26:32 01-25 [epoch 5 train] [step 50/114] [eta 0:00:03]: loss 1.0696(1.0696) | lr 6.5796e-04
+05:26:34 01-25 [epoch 5 train] [step 100/114] [eta 0:00:00]: loss 1.0566(1.0436) | lr 6.5796e-04
+05:26:35 01-25 [epoch 5 train] [step 114/114] [eta 0:00:00]: loss 1.0370(1.0138) | lr 6.5796e-04
+05:26:36 01-25 [epoch 5 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 83.3333 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 62.5000 | acc_yuanpan 33.3333 | acc_avg 75.0000 | Loss 0.8557
+05:26:37 01-25 [epoch 6 train] [step 1/114] [eta 0:00:09]: loss 1.5607(1.0199) | lr 6.5490e-04
+05:26:39 01-25 [epoch 6 train] [step 50/114] [eta 0:00:05]: loss 0.9259(0.9259) | lr 5.0500e-04
+05:26:41 01-25 [epoch 6 train] [step 100/114] [eta 0:00:00]: loss 0.9350(0.9440) | lr 5.0500e-04
+05:27:06 01-25 [epoch 6 train] [step 114/114] [eta 0:00:00]: loss 0.9369(0.9222) | lr 5.0500e-04
+05:26:42 01-25 [epoch 7 train] [step 1/114] [eta 0:00:05]: loss 0.5050(0.9141) | lr 5.0194e-04
+05:26:44 01-25 [epoch 7 train] [step 50/114] [eta 0:00:03]: loss 0.9247(0.9247) | lr 3.5204e-04
+05:26:46 01-25 [epoch 7 train] [step 100/114] [eta 0:00:00]: loss 0.8962(0.8676) | lr 3.5204e-04
+05:26:47 01-25 [epoch 7 train] [step 114/114] [eta 0:00:00]: loss 0.8871(0.8503) | lr 3.5204e-04
+05:26:47 01-25 [epoch 8 train] [step 1/114] [eta 0:00:05]: loss 0.9511(0.8563) | lr 3.4928e-04
+05:26:49 01-25 [epoch 8 train] [step 50/114] [eta 0:00:03]: loss 0.8324(0.8324) | lr 2.1405e-04
+05:26:52 01-25 [epoch 8 train] [step 100/114] [eta 0:00:00]: loss 0.8615(0.8905) | lr 2.1405e-04
+05:26:52 01-25 [epoch 8 train] [step 114/114] [eta 0:00:00]: loss 0.8705(0.8780) | lr 2.1405e-04
+05:26:53 01-25 [epoch 9 train] [step 1/114] [eta 0:00:06]: loss 0.5910(0.8729) | lr 2.1186e-04
+05:26:55 01-25 [epoch 9 train] [step 50/114] [eta 0:00:03]: loss 0.8429(0.8429) | lr 1.0454e-04
+05:26:57 01-25 [epoch 9 train] [step 100/114] [eta 0:00:00]: loss 0.8738(0.9046) | lr 1.0454e-04
+05:26:57 01-25 [epoch 9 train] [step 114/114] [eta 0:00:00]: loss 0.8589(0.8659) | lr 1.0454e-04
+05:26:58 01-25 [epoch 10 train] [step 1/114] [eta 0:00:05]: loss 0.7630(0.8563) | lr 1.0313e-04
+05:27:01 01-25 [epoch 10 train] [step 50/114] [eta 0:00:04]: loss 0.8452(0.8452) | lr 3.4227e-05
+05:27:03 01-25 [epoch 10 train] [step 100/114] [eta 0:00:00]: loss 0.8183(0.7914) | lr 3.4227e-05
+05:27:04 01-25 [epoch 10 train] [step 114/114] [eta 0:00:00]: loss 0.8288(0.8341) | lr 3.4227e-05
+05:27:05 01-25 [epoch 10 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 83.3333 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 33.3333 | acc_avg 77.0833 | Loss 0.6790
+05:27:30 01-25 [epoch 11 train] [step 1/114] [eta 0:00:10]: loss 0.7490(0.8312) | lr 5.3542e-05
+05:27:08 01-25 [epoch 11 train] [step 50/114] [eta 0:00:05]: loss 0.8827(0.8827) | lr 1.0000e-03
+05:27:11 01-25 [epoch 11 train] [step 100/114] [eta 0:00:00]: loss 0.8357(0.7886) | lr 1.0000e-03
+05:27:11 01-25 [epoch 11 train] [step 114/114] [eta 0:00:00]: loss 0.8298(0.7683) | lr 1.0000e-03
+05:27:12 01-25 [epoch 12 train] [step 1/114] [eta 0:00:06]: loss 0.5786(0.7718) | lr 9.9988e-04
+05:27:14 01-25 [epoch 12 train] [step 50/114] [eta 0:00:03]: loss 0.7506(0.7506) | lr 9.9391e-04
+05:27:16 01-25 [epoch 12 train] [step 100/114] [eta 0:00:00]: loss 0.7769(0.8032) | lr 9.9391e-04
+05:27:41 01-25 [epoch 12 train] [step 114/114] [eta 0:00:00]: loss 0.7759(0.7870) | lr 9.9391e-04
+05:27:17 01-25 [epoch 13 train] [step 1/114] [eta 0:00:05]: loss 0.5569(0.7796) | lr 9.9354e-04
+05:27:19 01-25 [epoch 13 train] [step 50/114] [eta 0:00:03]: loss 0.7436(0.7436) | lr 9.7577e-04
+05:27:21 01-25 [epoch 13 train] [step 100/114] [eta 0:00:00]: loss 0.7306(0.7175) | lr 9.7577e-04
+05:27:22 01-25 [epoch 13 train] [step 114/114] [eta 0:00:00]: loss 0.7114(0.6691) | lr 9.7577e-04
+05:27:22 01-25 [epoch 14 train] [step 1/114] [eta 0:00:05]: loss 0.9369(0.6719) | lr 9.7518e-04
+05:27:24 01-25 [epoch 14 train] [step 50/114] [eta 0:00:03]: loss 0.6989(0.6989) | lr 9.4605e-04
+05:27:26 01-25 [epoch 14 train] [step 100/114] [eta 0:00:00]: loss 0.7051(0.7112) | lr 9.4605e-04
+05:27:27 01-25 [epoch 14 train] [step 114/114] [eta 0:00:00]: loss 0.6965(0.7013) | lr 9.4605e-04
+05:27:27 01-25 [epoch 15 train] [step 1/114] [eta 0:00:05]: loss 0.6289(0.7036) | lr 9.4524e-04
+05:27:29 01-25 [epoch 15 train] [step 50/114] [eta 0:00:03]: loss 0.6400(0.6400) | lr 9.0546e-04
+05:27:55 01-25 [epoch 15 train] [step 100/114] [eta 0:00:00]: loss 0.6496(0.6593) | lr 9.0546e-04
+05:27:32 01-25 [epoch 15 train] [step 114/114] [eta 0:00:00]: loss 0.6583(0.6735) | lr 9.0546e-04
+05:27:33 01-25 [epoch 15 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 50.0000 | acc_avg 81.2500 | Loss 0.5438
+05:27:34 01-25 [epoch 16 train] [step 1/114] [eta 0:00:09]: loss 0.8134(0.6774) | lr 9.0445e-04
+05:27:36 01-25 [epoch 16 train] [step 50/114] [eta 0:00:05]: loss 0.6804(0.6804) | lr 8.5502e-04
+05:27:39 01-25 [epoch 16 train] [step 100/114] [eta 0:00:00]: loss 0.6247(0.5689) | lr 8.5502e-04
+05:27:39 01-25 [epoch 16 train] [step 114/114] [eta 0:00:00]: loss 0.6240(0.6133) | lr 8.5502e-04
+05:27:40 01-25 [epoch 17 train] [step 1/114] [eta 0:00:06]: loss 1.0442(0.6166) | lr 8.5384e-04
+05:27:42 01-25 [epoch 17 train] [step 50/114] [eta 0:00:03]: loss 0.5813(0.5813) | lr 7.9595e-04
+05:27:44 01-25 [epoch 17 train] [step 100/114] [eta 0:00:00]: loss 0.5940(0.6067) | lr 7.9595e-04
+05:27:45 01-25 [epoch 17 train] [step 114/114] [eta 0:00:00]: loss 0.5904(0.5954) | lr 7.9595e-04
+05:27:45 01-25 [epoch 18 train] [step 1/114] [eta 0:00:06]: loss 0.5711(0.5947) | lr 7.9463e-04
+05:27:47 01-25 [epoch 18 train] [step 50/114] [eta 0:00:03]: loss 0.5065(0.5065) | lr 7.2973e-04
+05:27:50 01-25 [epoch 18 train] [step 100/114] [eta 0:00:00]: loss 0.5387(0.5709) | lr 7.2973e-04
+05:27:50 01-25 [epoch 18 train] [step 114/114] [eta 0:00:00]: loss 0.5353(0.5310) | lr 7.2973e-04
+05:27:51 01-25 [epoch 19 train] [step 1/114] [eta 0:00:06]: loss 0.5574(0.5236) | lr 7.2829e-04
+05:27:53 01-25 [epoch 19 train] [step 50/114] [eta 0:00:03]: loss 0.5297(0.5297) | lr 6.5796e-04
+05:27:56 01-25 [epoch 19 train] [step 100/114] [eta 0:00:00]: loss 0.5067(0.4837) | lr 6.5796e-04
+05:28:20 01-25 [epoch 19 train] [step 114/114] [eta 0:00:00]: loss 0.5114(0.4925) | lr 6.5796e-04
+05:27:57 01-25 [epoch 20 train] [step 1/114] [eta 0:00:06]: loss 0.0784(0.4828) | lr 6.5645e-04
+05:27:59 01-25 [epoch 20 train] [step 50/114] [eta 0:00:03]: loss 0.5176(0.5176) | lr 5.8244e-04
+05:28:02 01-25 [epoch 20 train] [step 100/114] [eta 0:00:00]: loss 0.5108(0.5041) | lr 5.8244e-04
+05:28:02 01-25 [epoch 20 train] [step 114/114] [eta 0:00:00]: loss 0.5028(0.4828) | lr 5.8244e-04
+05:28:04 01-25 [epoch 20 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 83.3333 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 66.6667 | acc_avg 81.2500 | Loss 0.5794
+05:28:04 01-25 [epoch 21 train] [step 1/114] [eta 0:00:09]: loss 0.8248(0.4833) | lr 5.8089e-04
+05:28:31 01-25 [epoch 21 train] [step 50/114] [eta 0:00:05]: loss 0.5064(0.5064) | lr 5.0500e-04
+05:28:09 01-25 [epoch 21 train] [step 100/114] [eta 0:00:00]: loss 0.4775(0.4487) | lr 5.0500e-04
+05:28:09 01-25 [epoch 21 train] [step 114/114] [eta 0:00:00]: loss 0.4896(0.4767) | lr 5.0500e-04
+05:28:10 01-25 [epoch 22 train] [step 1/114] [eta 0:00:06]: loss 0.8531(0.4824) | lr 5.0345e-04
+05:28:12 01-25 [epoch 22 train] [step 50/114] [eta 0:00:03]: loss 0.4662(0.4662) | lr 4.2756e-04
+05:28:14 01-25 [epoch 22 train] [step 100/114] [eta 0:00:00]: loss 0.4595(0.4528) | lr 4.2756e-04
+05:28:15 01-25 [epoch 22 train] [step 114/114] [eta 0:00:00]: loss 0.4542(0.4227) | lr 4.2756e-04
+05:28:16 01-25 [epoch 23 train] [step 1/114] [eta 0:00:07]: loss 0.3743(0.4213) | lr 4.2605e-04
+05:28:18 01-25 [epoch 23 train] [step 50/114] [eta 0:00:03]: loss 0.4302(0.4302) | lr 3.5204e-04
+05:28:20 01-25 [epoch 23 train] [step 100/114] [eta 0:00:00]: loss 0.4320(0.4339) | lr 3.5204e-04
+05:28:21 01-25 [epoch 23 train] [step 114/114] [eta 0:00:00]: loss 0.4550(0.4819) | lr 3.5204e-04
+05:28:46 01-25 [epoch 24 train] [step 1/114] [eta 0:00:07]: loss 0.2980(0.4760) | lr 3.5060e-04
+05:28:24 01-25 [epoch 24 train] [step 50/114] [eta 0:00:03]: loss 0.4158(0.4158) | lr 2.8027e-04
+05:28:26 01-25 [epoch 24 train] [step 100/114] [eta 0:00:00]: loss 0.4474(0.4791) | lr 2.8027e-04
+05:28:50 01-25 [epoch 24 train] [step 114/114] [eta 0:00:00]: loss 0.4360(0.4495) | lr 2.8027e-04
+05:28:27 01-25 [epoch 25 train] [step 1/114] [eta 0:00:06]: loss 0.3812(0.4493) | lr 2.7895e-04
+05:28:29 01-25 [epoch 25 train] [step 50/114] [eta 0:00:03]: loss 0.4374(0.4374) | lr 2.1405e-04
+05:28:31 01-25 [epoch 25 train] [step 100/114] [eta 0:00:00]: loss 0.4336(0.4298) | lr 2.1405e-04
+05:28:56 01-25 [epoch 25 train] [step 114/114] [eta 0:00:00]: loss 0.4314(0.4263) | lr 2.1405e-04
+05:28:33 01-25 [epoch 25 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 66.6667 | acc_avg 83.3333 | Loss 0.4744
+05:28:34 01-25 [epoch 26 train] [step 1/114] [eta 0:00:09]: loss 0.2022(0.4266) | lr 2.1287e-04
+05:28:36 01-25 [epoch 26 train] [step 50/114] [eta 0:00:05]: loss 0.4102(0.4102) | lr 1.5498e-04
+05:28:38 01-25 [epoch 26 train] [step 100/114] [eta 0:00:00]: loss 0.4391(0.4680) | lr 1.5498e-04
+05:28:39 01-25 [epoch 26 train] [step 114/114] [eta 0:00:00]: loss 0.4332(0.4534) | lr 1.5498e-04
+05:28:39 01-25 [epoch 27 train] [step 1/114] [eta 0:00:06]: loss 0.8052(0.4650) | lr 1.5397e-04
+05:28:42 01-25 [epoch 27 train] [step 50/114] [eta 0:00:03]: loss 0.4443(0.4443) | lr 1.0454e-04
+05:28:44 01-25 [epoch 27 train] [step 100/114] [eta 0:00:00]: loss 0.4164(0.3884) | lr 1.0454e-04
+05:28:44 01-25 [epoch 27 train] [step 114/114] [eta 0:00:00]: loss 0.4196(0.4153) | lr 1.0454e-04
+05:28:45 01-25 [epoch 28 train] [step 1/114] [eta 0:00:06]: loss 0.6980(0.4152) | lr 1.0372e-04
+05:28:47 01-25 [epoch 28 train] [step 50/114] [eta 0:00:03]: loss 0.4042(0.4042) | lr 6.3952e-05
+05:28:49 01-25 [epoch 28 train] [step 100/114] [eta 0:00:00]: loss 0.4063(0.4083) | lr 6.3952e-05
+05:28:50 01-25 [epoch 28 train] [step 114/114] [eta 0:00:00]: loss 0.4040(0.4081) | lr 6.3952e-05
+05:28:50 01-25 [epoch 29 train] [step 1/114] [eta 0:00:05]: loss 0.3720(0.4090) | lr 6.3357e-05
+05:28:52 01-25 [epoch 29 train] [step 50/114] [eta 0:00:03]: loss 0.4393(0.4393) | lr 3.4227e-05
+05:28:54 01-25 [epoch 29 train] [step 100/114] [eta 0:00:00]: loss 0.4364(0.4335) | lr 3.4227e-05
+05:28:55 01-25 [epoch 29 train] [step 114/114] [eta 0:00:00]: loss 0.4276(0.4166) | lr 3.4227e-05
+05:28:56 01-25 [epoch 30 train] [step 1/114] [eta 0:00:06]: loss 0.2542(0.4024) | lr 3.3864e-05
+05:28:58 01-25 [epoch 30 train] [step 50/114] [eta 0:00:03]: loss 0.4379(0.4379) | lr 1.6094e-05
+05:29:00 01-25 [epoch 30 train] [step 100/114] [eta 0:00:00]: loss 0.4016(0.3653) | lr 1.6094e-05
+05:29:00 01-25 [epoch 30 train] [step 114/114] [eta 0:00:00]: loss 0.3992(0.3828) | lr 1.6094e-05
+05:29:02 01-25 [epoch 30 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 66.6667 | acc_avg 83.3333 | Loss 0.4709
+05:29:02 01-25 [epoch 31 train] [step 1/114] [eta 0:00:09]: loss 0.5492(0.3845) | lr 3.5772e-05
+05:29:04 01-25 [epoch 31 train] [step 50/114] [eta 0:00:05]: loss 0.4183(0.4183) | lr 1.0000e-03
+05:29:31 01-25 [epoch 31 train] [step 100/114] [eta 0:00:00]: loss 0.4341(0.4499) | lr 1.0000e-03
+05:29:07 01-25 [epoch 31 train] [step 114/114] [eta 0:00:00]: loss 0.4506(0.4700) | lr 1.0000e-03
+05:29:08 01-25 [epoch 32 train] [step 1/114] [eta 0:00:05]: loss 0.1472(0.4660) | lr 9.9997e-04
+05:29:10 01-25 [epoch 32 train] [step 50/114] [eta 0:00:03]: loss 0.3949(0.3949) | lr 9.9847e-04
+05:29:12 01-25 [epoch 32 train] [step 100/114] [eta 0:00:00]: loss 0.4145(0.4340) | lr 9.9847e-04
+05:29:12 01-25 [epoch 32 train] [step 114/114] [eta 0:00:00]: loss 0.4169(0.4391) | lr 9.9847e-04
+05:29:13 01-25 [epoch 33 train] [step 1/114] [eta 0:00:06]: loss 0.6042(0.4409) | lr 9.9838e-04
+05:29:15 01-25 [epoch 33 train] [step 50/114] [eta 0:00:03]: loss 0.3608(0.3608) | lr 9.9391e-04
+05:29:17 01-25 [epoch 33 train] [step 100/114] [eta 0:00:00]: loss 0.3653(0.3699) | lr 9.9391e-04
+05:29:18 01-25 [epoch 33 train] [step 114/114] [eta 0:00:00]: loss 0.3760(0.3953) | lr 9.9391e-04
+05:29:19 01-25 [epoch 34 train] [step 1/114] [eta 0:00:05]: loss 0.2345(0.3918) | lr 9.9375e-04
+05:29:21 01-25 [epoch 34 train] [step 50/114] [eta 0:00:03]: loss 0.3598(0.3598) | lr 9.8632e-04
+05:29:23 01-25 [epoch 34 train] [step 100/114] [eta 0:00:00]: loss 0.3610(0.3622) | lr 9.8632e-04
+05:29:23 01-25 [epoch 34 train] [step 114/114] [eta 0:00:00]: loss 0.3605(0.3481) | lr 9.8632e-04
+05:29:24 01-25 [epoch 35 train] [step 1/114] [eta 0:00:06]: loss 0.5741(0.3516) | lr 9.8611e-04
+05:29:26 01-25 [epoch 35 train] [step 50/114] [eta 0:00:03]: loss 0.3336(0.3336) | lr 9.7577e-04
+05:29:28 01-25 [epoch 35 train] [step 100/114] [eta 0:00:00]: loss 0.3205(0.3073) | lr 9.7577e-04
+05:29:29 01-25 [epoch 35 train] [step 114/114] [eta 0:00:00]: loss 0.3238(0.3114) | lr 9.7577e-04
+05:29:30 01-25 [epoch 35 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 66.6667 | acc_avg 83.3333 | Loss 0.5024
+05:29:56 01-25 [epoch 36 train] [step 1/114] [eta 0:00:09]: loss 0.3491(0.3154) | lr 9.7550e-04
+05:29:33 01-25 [epoch 36 train] [step 50/114] [eta 0:00:05]: loss 0.3187(0.3187) | lr 9.6232e-04
+05:29:36 01-25 [epoch 36 train] [step 100/114] [eta 0:00:00]: loss 0.3122(0.3056) | lr 9.6232e-04
+05:29:36 01-25 [epoch 36 train] [step 114/114] [eta 0:00:00]: loss 0.3205(0.3166) | lr 9.6232e-04
+05:29:37 01-25 [epoch 37 train] [step 1/114] [eta 0:00:06]: loss 0.4982(0.3238) | lr 9.6199e-04
+05:29:39 01-25 [epoch 37 train] [step 50/114] [eta 0:00:03]: loss 0.2947(0.2947) | lr 9.4605e-04
+05:29:41 01-25 [epoch 37 train] [step 100/114] [eta 0:00:00]: loss 0.2707(0.2468) | lr 9.4605e-04
+05:29:42 01-25 [epoch 37 train] [step 114/114] [eta 0:00:00]: loss 0.2697(0.2444) | lr 9.4605e-04
+05:29:42 01-25 [epoch 38 train] [step 1/114] [eta 0:00:06]: loss 0.0773(0.2407) | lr 9.4567e-04
+05:29:45 01-25 [epoch 38 train] [step 50/114] [eta 0:00:03]: loss 0.2586(0.2586) | lr 9.2706e-04
+05:29:47 01-25 [epoch 38 train] [step 100/114] [eta 0:00:00]: loss 0.2554(0.2523) | lr 9.2706e-04
+05:29:47 01-25 [epoch 38 train] [step 114/114] [eta 0:00:00]: loss 0.2598(0.2835) | lr 9.2706e-04
+05:29:48 01-25 [epoch 39 train] [step 1/114] [eta 0:00:05]: loss 0.4580(0.2816) | lr 9.2663e-04
+05:29:50 01-25 [epoch 39 train] [step 50/114] [eta 0:00:03]: loss 0.2570(0.2570) | lr 9.0546e-04
+05:29:52 01-25 [epoch 39 train] [step 100/114] [eta 0:00:00]: loss 0.2648(0.2725) | lr 9.0546e-04
+05:29:53 01-25 [epoch 39 train] [step 114/114] [eta 0:00:00]: loss 0.2543(0.2605) | lr 9.0546e-04
+05:29:53 01-25 [epoch 40 train] [step 1/114] [eta 0:00:06]: loss 0.2832(0.2651) | lr 9.0498e-04
+05:29:55 01-25 [epoch 40 train] [step 50/114] [eta 0:00:03]: loss 0.2156(0.2156) | lr 8.8140e-04
+05:29:58 01-25 [epoch 40 train] [step 100/114] [eta 0:00:00]: loss 0.2359(0.2562) | lr 8.8140e-04
+05:29:58 01-25 [epoch 40 train] [step 114/114] [eta 0:00:00]: loss 0.2354(0.2490) | lr 8.8140e-04
+05:30:00 01-25 [epoch 40 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 66.6667 | acc_avg 83.3333 | Loss 0.4461
+05:30:00 01-25 [epoch 41 train] [step 1/114] [eta 0:00:09]: loss 0.3420(0.2540) | lr 8.8087e-04
+05:30:02 01-25 [epoch 41 train] [step 50/114] [eta 0:00:05]: loss 0.1824(0.1824) | lr 8.5502e-04
+05:30:04 01-25 [epoch 41 train] [step 100/114] [eta 0:00:00]: loss 0.1960(0.2097) | lr 8.5502e-04
+05:30:05 01-25 [epoch 41 train] [step 114/114] [eta 0:00:00]: loss 0.2120(0.2431) | lr 8.5502e-04
+05:30:05 01-25 [epoch 42 train] [step 1/114] [eta 0:00:05]: loss 0.1776(0.2400) | lr 8.5445e-04
+05:30:07 01-25 [epoch 42 train] [step 50/114] [eta 0:00:03]: loss 0.1544(0.1544) | lr 8.2648e-04
+05:30:10 01-25 [epoch 42 train] [step 100/114] [eta 0:00:00]: loss 0.1740(0.1935) | lr 8.2648e-04
+05:30:10 01-25 [epoch 42 train] [step 114/114] [eta 0:00:00]: loss 0.1756(0.2011) | lr 8.2648e-04
+05:30:11 01-25 [epoch 43 train] [step 1/114] [eta 0:00:06]: loss 0.0248(0.1937) | lr 8.2587e-04
+05:30:13 01-25 [epoch 43 train] [step 50/114] [eta 0:00:03]: loss 0.1832(0.1832) | lr 7.9595e-04
+05:30:15 01-25 [epoch 43 train] [step 100/114] [eta 0:00:00]: loss 0.1804(0.1777) | lr 7.9595e-04
+05:30:15 01-25 [epoch 43 train] [step 114/114] [eta 0:00:00]: loss 0.1847(0.1960) | lr 7.9595e-04
+05:30:16 01-25 [epoch 44 train] [step 1/114] [eta 0:00:05]: loss 0.1900(0.1979) | lr 7.9531e-04
+05:30:18 01-25 [epoch 44 train] [step 50/114] [eta 0:00:03]: loss 0.1494(0.1494) | lr 7.6364e-04
+05:30:20 01-25 [epoch 44 train] [step 100/114] [eta 0:00:00]: loss 0.1630(0.1765) | lr 7.6364e-04
+05:30:21 01-25 [epoch 44 train] [step 114/114] [eta 0:00:00]: loss 0.1671(0.1722) | lr 7.6364e-04
+05:30:21 01-25 [epoch 45 train] [step 1/114] [eta 0:00:05]: loss 0.1340(0.1729) | lr 7.6296e-04
+05:30:23 01-25 [epoch 45 train] [step 50/114] [eta 0:00:03]: loss 0.1406(0.1406) | lr 7.2973e-04
+05:30:25 01-25 [epoch 45 train] [step 100/114] [eta 0:00:00]: loss 0.1454(0.1501) | lr 7.2973e-04
+05:30:26 01-25 [epoch 45 train] [step 114/114] [eta 0:00:00]: loss 0.1472(0.1424) | lr 7.2973e-04
+05:30:27 01-25 [epoch 45 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 100.0000 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 66.6667 | acc_avg 85.4167 | Loss 0.5319
+05:30:28 01-25 [epoch 46 train] [step 1/114] [eta 0:00:09]: loss 0.0783(0.1431) | lr 7.2902e-04
+05:30:30 01-25 [epoch 46 train] [step 50/114] [eta 0:00:05]: loss 0.1530(0.1530) | lr 6.9443e-04
+05:30:32 01-25 [epoch 46 train] [step 100/114] [eta 0:00:00]: loss 0.1392(0.1254) | lr 6.9443e-04
+05:30:33 01-25 [epoch 46 train] [step 114/114] [eta 0:00:00]: loss 0.1351(0.1045) | lr 6.9443e-04
+05:30:34 01-25 [epoch 47 train] [step 1/114] [eta 0:00:06]: loss 0.4350(0.1087) | lr 6.9370e-04
+05:30:36 01-25 [epoch 47 train] [step 50/114] [eta 0:00:03]: loss 0.1441(0.1441) | lr 6.5796e-04
+05:30:38 01-25 [epoch 47 train] [step 100/114] [eta 0:00:00]: loss 0.1425(0.1409) | lr 6.5796e-04
+05:30:38 01-25 [epoch 47 train] [step 114/114] [eta 0:00:00]: loss 0.1450(0.1647) | lr 6.5796e-04
+05:30:39 01-25 [epoch 48 train] [step 1/114] [eta 0:00:05]: loss 0.0584(0.1635) | lr 6.5722e-04
+05:30:41 01-25 [epoch 48 train] [step 50/114] [eta 0:00:03]: loss 0.1373(0.1373) | lr 6.2056e-04
+05:30:43 01-25 [epoch 48 train] [step 100/114] [eta 0:00:00]: loss 0.1215(0.1057) | lr 6.2056e-04
+05:30:44 01-25 [epoch 48 train] [step 114/114] [eta 0:00:00]: loss 0.1217(0.1089) | lr 6.2056e-04
+05:30:45 01-25 [epoch 49 train] [step 1/114] [eta 0:00:07]: loss 0.1456(0.1116) | lr 6.1979e-04
+05:30:47 01-25 [epoch 49 train] [step 50/114] [eta 0:00:03]: loss 0.1020(0.1020) | lr 5.8244e-04
+05:30:49 01-25 [epoch 49 train] [step 100/114] [eta 0:00:00]: loss 0.1201(0.1383) | lr 5.8244e-04
+05:30:50 01-25 [epoch 49 train] [step 114/114] [eta 0:00:00]: loss 0.1208(0.1434) | lr 5.8244e-04
+05:30:50 01-25 [epoch 50 train] [step 1/114] [eta 0:00:05]: loss 0.0391(0.1431) | lr 5.8166e-04
+05:30:52 01-25 [epoch 50 train] [step 50/114] [eta 0:00:03]: loss 0.1102(0.1102) | lr 5.4384e-04
+05:30:54 01-25 [epoch 50 train] [step 100/114] [eta 0:00:00]: loss 0.1178(0.1254) | lr 5.4384e-04
+05:30:55 01-25 [epoch 50 train] [step 114/114] [eta 0:00:00]: loss 0.1164(0.0998) | lr 5.4384e-04
+05:30:57 01-25 [epoch 50 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 66.6667 | acc_avg 81.2500 | Loss 0.9819
+05:30:58 01-25 [epoch 51 train] [step 1/114] [eta 0:00:10]: loss 0.0725(0.0970) | lr 5.4306e-04
+05:31:00 01-25 [epoch 51 train] [step 50/114] [eta 0:00:06]: loss 0.1260(0.1260) | lr 5.0500e-04
+05:31:02 01-25 [epoch 51 train] [step 100/114] [eta 0:00:00]: loss 0.1149(0.1038) | lr 5.0500e-04
+05:31:03 01-25 [epoch 51 train] [step 114/114] [eta 0:00:00]: loss 0.1132(0.1008) | lr 5.0500e-04
+05:31:04 01-25 [epoch 52 train] [step 1/114] [eta 0:00:06]: loss 0.0202(0.0976) | lr 5.0422e-04
+05:31:06 01-25 [epoch 52 train] [step 50/114] [eta 0:00:03]: loss 0.1069(0.1069) | lr 4.6616e-04
+05:31:08 01-25 [epoch 52 train] [step 100/114] [eta 0:00:00]: loss 0.1062(0.1055) | lr 4.6616e-04
+05:31:09 01-25 [epoch 52 train] [step 114/114] [eta 0:00:00]: loss 0.1056(0.1072) | lr 4.6616e-04
+05:31:09 01-25 [epoch 53 train] [step 1/114] [eta 0:00:05]: loss 0.0096(0.1063) | lr 4.6539e-04
+05:31:11 01-25 [epoch 53 train] [step 50/114] [eta 0:00:03]: loss 0.0797(0.0797) | lr 4.2756e-04
+05:31:14 01-25 [epoch 53 train] [step 100/114] [eta 0:00:00]: loss 0.0921(0.1044) | lr 4.2756e-04
+05:31:14 01-25 [epoch 53 train] [step 114/114] [eta 0:00:00]: loss 0.0887(0.0906) | lr 4.2756e-04
+05:31:15 01-25 [epoch 54 train] [step 1/114] [eta 0:00:05]: loss 0.1410(0.0913) | lr 4.2680e-04
+05:31:17 01-25 [epoch 54 train] [step 50/114] [eta 0:00:03]: loss 0.0912(0.0912) | lr 3.8944e-04
+05:31:19 01-25 [epoch 54 train] [step 100/114] [eta 0:00:00]: loss 0.0815(0.0717) | lr 3.8944e-04
+05:31:19 01-25 [epoch 54 train] [step 114/114] [eta 0:00:00]: loss 0.0800(0.0589) | lr 3.8944e-04
+05:31:20 01-25 [epoch 55 train] [step 1/114] [eta 0:00:06]: loss 0.0235(0.0588) | lr 3.8870e-04
+05:31:22 01-25 [epoch 55 train] [step 50/114] [eta 0:00:03]: loss 0.0671(0.0671) | lr 3.5204e-04
+05:31:24 01-25 [epoch 55 train] [step 100/114] [eta 0:00:00]: loss 0.0817(0.0963) | lr 3.5204e-04
+05:31:25 01-25 [epoch 55 train] [step 114/114] [eta 0:00:00]: loss 0.0798(0.0930) | lr 3.5204e-04
+05:31:51 01-25 [epoch 55 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 83.3333 | acc_avg 83.3333 | Loss 0.9713
+05:31:27 01-25 [epoch 56 train] [step 1/114] [eta 0:00:10]: loss 0.0406(0.0935) | lr 3.5131e-04
+05:31:29 01-25 [epoch 56 train] [step 50/114] [eta 0:00:05]: loss 0.0971(0.0971) | lr 3.1557e-04
+05:31:31 01-25 [epoch 56 train] [step 100/114] [eta 0:00:00]: loss 0.1095(0.1220) | lr 3.1557e-04
+05:31:32 01-25 [epoch 56 train] [step 114/114] [eta 0:00:00]: loss 0.1083(0.1285) | lr 3.1557e-04
+05:31:33 01-25 [epoch 57 train] [step 1/114] [eta 0:00:05]: loss 0.0336(0.1200) | lr 3.1487e-04
+05:31:35 01-25 [epoch 57 train] [step 50/114] [eta 0:00:03]: loss 0.0881(0.0881) | lr 2.8027e-04
+05:31:37 01-25 [epoch 57 train] [step 100/114] [eta 0:00:00]: loss 0.0830(0.0780) | lr 2.8027e-04
+05:31:38 01-25 [epoch 57 train] [step 114/114] [eta 0:00:00]: loss 0.0854(0.0848) | lr 2.8027e-04
+05:31:38 01-25 [epoch 58 train] [step 1/114] [eta 0:00:06]: loss 0.0781(0.0860) | lr 2.7960e-04
+05:31:40 01-25 [epoch 58 train] [step 50/114] [eta 0:00:03]: loss 0.0567(0.0567) | lr 2.4636e-04
+05:31:43 01-25 [epoch 58 train] [step 100/114] [eta 0:00:00]: loss 0.0611(0.0654) | lr 2.4636e-04
+05:31:43 01-25 [epoch 58 train] [step 114/114] [eta 0:00:00]: loss 0.0635(0.0732) | lr 2.4636e-04
+05:31:44 01-25 [epoch 59 train] [step 1/114] [eta 0:00:06]: loss 0.0270(0.0736) | lr 2.4572e-04
+05:31:46 01-25 [epoch 59 train] [step 50/114] [eta 0:00:03]: loss 0.0527(0.0527) | lr 2.1405e-04
+05:31:48 01-25 [epoch 59 train] [step 100/114] [eta 0:00:00]: loss 0.0612(0.0696) | lr 2.1405e-04
+05:31:48 01-25 [epoch 59 train] [step 114/114] [eta 0:00:00]: loss 0.0645(0.0850) | lr 2.1405e-04
+05:31:49 01-25 [epoch 60 train] [step 1/114] [eta 0:00:05]: loss 0.0070(0.0847) | lr 2.1344e-04
+05:31:51 01-25 [epoch 60 train] [step 50/114] [eta 0:00:03]: loss 0.0759(0.0759) | lr 1.8352e-04
+05:31:53 01-25 [epoch 60 train] [step 100/114] [eta 0:00:00]: loss 0.0642(0.0524) | lr 1.8352e-04
+05:31:54 01-25 [epoch 60 train] [step 114/114] [eta 0:00:00]: loss 0.0609(0.0526) | lr 1.8352e-04
+05:31:56 01-25 [epoch 60 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 66.6667 | acc_avg 83.3333 | Loss 0.4395
+05:31:57 01-25 [epoch 61 train] [step 1/114] [eta 0:00:11]: loss 0.0349(0.0529) | lr 1.8295e-04
+05:31:59 01-25 [epoch 61 train] [step 50/114] [eta 0:00:06]: loss 0.1081(0.1081) | lr 1.5498e-04
+05:32:01 01-25 [epoch 61 train] [step 100/114] [eta 0:00:00]: loss 0.0951(0.0821) | lr 1.5498e-04
+05:32:02 01-25 [epoch 61 train] [step 114/114] [eta 0:00:00]: loss 0.0927(0.0884) | lr 1.5498e-04
+05:32:03 01-25 [epoch 62 train] [step 1/114] [eta 0:00:06]: loss 0.0645(0.0893) | lr 1.5445e-04
+05:32:05 01-25 [epoch 62 train] [step 50/114] [eta 0:00:03]: loss 0.0498(0.0498) | lr 1.2860e-04
+05:32:07 01-25 [epoch 62 train] [step 100/114] [eta 0:00:00]: loss 0.0609(0.0720) | lr 1.2860e-04
+05:32:07 01-25 [epoch 62 train] [step 114/114] [eta 0:00:00]: loss 0.0614(0.0540) | lr 1.2860e-04
+05:32:08 01-25 [epoch 63 train] [step 1/114] [eta 0:00:05]: loss 0.0494(0.0548) | lr 1.2812e-04
+05:32:10 01-25 [epoch 63 train] [step 50/114] [eta 0:00:03]: loss 0.0653(0.0653) | lr 1.0454e-04
+05:32:12 01-25 [epoch 63 train] [step 100/114] [eta 0:00:00]: loss 0.0727(0.0802) | lr 1.0454e-04
+05:32:13 01-25 [epoch 63 train] [step 114/114] [eta 0:00:00]: loss 0.0693(0.0700) | lr 1.0454e-04
+05:32:14 01-25 [epoch 64 train] [step 1/114] [eta 0:00:06]: loss 0.0290(0.0701) | lr 1.0410e-04
+05:32:16 01-25 [epoch 64 train] [step 50/114] [eta 0:00:03]: loss 0.0645(0.0645) | lr 8.2943e-05
+05:32:18 01-25 [epoch 64 train] [step 100/114] [eta 0:00:00]: loss 0.0728(0.0811) | lr 8.2943e-05
+05:32:19 01-25 [epoch 64 train] [step 114/114] [eta 0:00:00]: loss 0.0684(0.0657) | lr 8.2943e-05
+05:32:19 01-25 [epoch 65 train] [step 1/114] [eta 0:00:06]: loss 0.0905(0.0673) | lr 8.2563e-05
+05:32:46 01-25 [epoch 65 train] [step 50/114] [eta 0:00:03]: loss 0.0316(0.0316) | lr 6.3952e-05
+05:32:24 01-25 [epoch 65 train] [step 100/114] [eta 0:00:00]: loss 0.0503(0.0690) | lr 6.3952e-05
+05:32:24 01-25 [epoch 65 train] [step 114/114] [eta 0:00:00]: loss 0.0490(0.0511) | lr 6.3952e-05
+05:32:26 01-25 [epoch 65 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 66.6667 | acc_avg 83.3333 | Loss 0.6025
+05:32:26 01-25 [epoch 66 train] [step 1/114] [eta 0:00:09]: loss 0.0584(0.0520) | lr 6.3626e-05
+05:32:28 01-25 [epoch 66 train] [step 50/114] [eta 0:00:05]: loss 0.0610(0.0610) | lr 4.7680e-05
+05:32:31 01-25 [epoch 66 train] [step 100/114] [eta 0:00:00]: loss 0.0559(0.0509) | lr 4.7680e-05
+05:32:32 01-25 [epoch 66 train] [step 114/114] [eta 0:00:00]: loss 0.0519(0.0458) | lr 4.7680e-05
+05:32:33 01-25 [epoch 67 train] [step 1/114] [eta 0:00:08]: loss 0.2153(0.0492) | lr 4.7411e-05
+05:32:35 01-25 [epoch 67 train] [step 50/114] [eta 0:00:03]: loss 0.0612(0.0612) | lr 3.4227e-05
+05:32:38 01-25 [epoch 67 train] [step 100/114] [eta 0:00:00]: loss 0.0556(0.0501) | lr 3.4227e-05
+05:32:38 01-25 [epoch 67 train] [step 114/114] [eta 0:00:00]: loss 0.0576(0.0593) | lr 3.4227e-05
+05:32:39 01-25 [epoch 68 train] [step 1/114] [eta 0:00:07]: loss 0.0462(0.0591) | lr 3.4016e-05
+05:32:41 01-25 [epoch 68 train] [step 50/114] [eta 0:00:03]: loss 0.0831(0.0831) | lr 2.3677e-05
+05:32:44 01-25 [epoch 68 train] [step 100/114] [eta 0:00:00]: loss 0.0755(0.0680) | lr 2.3677e-05
+05:32:45 01-25 [epoch 68 train] [step 114/114] [eta 0:00:00]: loss 0.0751(0.0510) | lr 2.3677e-05
+05:32:46 01-25 [epoch 69 train] [step 1/114] [eta 0:00:08]: loss 0.3282(0.0544) | lr 2.3525e-05
+05:32:48 01-25 [epoch 69 train] [step 50/114] [eta 0:00:03]: loss 0.0613(0.0613) | lr 1.6094e-05
+05:32:50 01-25 [epoch 69 train] [step 100/114] [eta 0:00:00]: loss 0.0559(0.0506) | lr 1.6094e-05
+05:32:50 01-25 [epoch 69 train] [step 114/114] [eta 0:00:00]: loss 0.0650(0.0762) | lr 1.6094e-05
+05:32:51 01-25 [epoch 70 train] [step 1/114] [eta 0:00:06]: loss 0.0073(0.0762) | lr 1.6003e-05
+05:32:53 01-25 [epoch 70 train] [step 50/114] [eta 0:00:03]: loss 0.0566(0.0566) | lr 1.1526e-05
+05:32:55 01-25 [epoch 70 train] [step 100/114] [eta 0:00:00]: loss 0.0518(0.0470) | lr 1.1526e-05
+05:32:56 01-25 [epoch 70 train] [step 114/114] [eta 0:00:00]: loss 0.0509(0.0513) | lr 1.1526e-05
+05:32:58 01-25 [epoch 70 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 66.6667 | acc_avg 83.3333 | Loss 0.5728
+05:32:58 01-25 [epoch 71 train] [step 1/114] [eta 0:00:10]: loss 0.0617(0.0516) | lr 3.1295e-05
+05:33:01 01-25 [epoch 71 train] [step 50/114] [eta 0:00:05]: loss 0.1100(0.1100) | lr 1.0000e-03
+05:33:03 01-25 [epoch 71 train] [step 100/114] [eta 0:00:00]: loss 0.0925(0.0750) | lr 1.0000e-03
+05:33:04 01-25 [epoch 71 train] [step 114/114] [eta 0:00:00]: loss 0.0915(0.0901) | lr 1.0000e-03
+05:33:04 01-25 [epoch 72 train] [step 1/114] [eta 0:00:07]: loss 0.0315(0.0906) | lr 9.9999e-04
+05:33:07 01-25 [epoch 72 train] [step 50/114] [eta 0:00:03]: loss 0.0916(0.0916) | lr 9.9962e-04
+05:33:09 01-25 [epoch 72 train] [step 100/114] [eta 0:00:00]: loss 0.0823(0.0729) | lr 9.9962e-04
+05:33:09 01-25 [epoch 72 train] [step 114/114] [eta 0:00:00]: loss 0.0855(0.0750) | lr 9.9962e-04
+05:33:10 01-25 [epoch 73 train] [step 1/114] [eta 0:00:05]: loss 0.1489(0.0777) | lr 9.9960e-04
+05:33:36 01-25 [epoch 73 train] [step 50/114] [eta 0:00:03]: loss 0.0783(0.0783) | lr 9.9847e-04
+05:33:14 01-25 [epoch 73 train] [step 100/114] [eta 0:00:00]: loss 0.0848(0.0913) | lr 9.9847e-04
+05:33:15 01-25 [epoch 73 train] [step 114/114] [eta 0:00:00]: loss 0.0859(0.0995) | lr 9.9847e-04
+05:33:16 01-25 [epoch 74 train] [step 1/114] [eta 0:00:07]: loss 0.0376(0.0980) | lr 9.9844e-04
+05:33:18 01-25 [epoch 74 train] [step 50/114] [eta 0:00:04]: loss 0.0763(0.0763) | lr 9.9657e-04
+05:33:20 01-25 [epoch 74 train] [step 100/114] [eta 0:00:00]: loss 0.0586(0.0410) | lr 9.9657e-04
+05:33:21 01-25 [epoch 74 train] [step 114/114] [eta 0:00:00]: loss 0.0609(0.0481) | lr 9.9657e-04
+05:33:22 01-25 [epoch 75 train] [step 1/114] [eta 0:00:07]: loss 0.1036(0.0479) | lr 9.9652e-04
+05:33:24 01-25 [epoch 75 train] [step 50/114] [eta 0:00:03]: loss 0.0671(0.0671) | lr 9.9391e-04
+05:33:26 01-25 [epoch 75 train] [step 100/114] [eta 0:00:00]: loss 0.0781(0.0892) | lr 9.9391e-04
+05:33:51 01-25 [epoch 75 train] [step 114/114] [eta 0:00:00]: loss 0.0718(0.0754) | lr 9.9391e-04
+05:33:28 01-25 [epoch 75 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 77.7778 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 66.6667 | acc_avg 81.2500 | Loss 0.5998
+05:33:29 01-25 [epoch 76 train] [step 1/114] [eta 0:00:09]: loss 0.0475(0.0757) | lr 9.9384e-04
+05:33:31 01-25 [epoch 76 train] [step 50/114] [eta 0:00:05]: loss 0.0560(0.0560) | lr 9.9049e-04
+05:33:33 01-25 [epoch 76 train] [step 100/114] [eta 0:00:00]: loss 0.0691(0.0823) | lr 9.9049e-04
+05:33:34 01-25 [epoch 76 train] [step 114/114] [eta 0:00:00]: loss 0.0641(0.0603) | lr 9.9049e-04
+05:33:34 01-25 [epoch 77 train] [step 1/114] [eta 0:00:05]: loss 0.0174(0.0606) | lr 9.9041e-04
+05:33:36 01-25 [epoch 77 train] [step 50/114] [eta 0:00:03]: loss 0.0465(0.0465) | lr 9.8632e-04
+05:33:39 01-25 [epoch 77 train] [step 100/114] [eta 0:00:00]: loss 0.0454(0.0442) | lr 9.8632e-04
+05:33:39 01-25 [epoch 77 train] [step 114/114] [eta 0:00:00]: loss 0.0454(0.0478) | lr 9.8632e-04
+05:33:40 01-25 [epoch 78 train] [step 1/114] [eta 0:00:06]: loss 0.0039(0.0474) | lr 9.8622e-04
+05:33:42 01-25 [epoch 78 train] [step 50/114] [eta 0:00:03]: loss 0.0320(0.0320) | lr 9.8142e-04
+05:33:44 01-25 [epoch 78 train] [step 100/114] [eta 0:00:00]: loss 0.0358(0.0396) | lr 9.8142e-04
+05:33:45 01-25 [epoch 78 train] [step 114/114] [eta 0:00:00]: loss 0.0406(0.0417) | lr 9.8142e-04
+05:33:46 01-25 [epoch 79 train] [step 1/114] [eta 0:00:06]: loss 0.0063(0.0388) | lr 9.8130e-04
+05:33:47 01-25 [epoch 79 train] [step 50/114] [eta 0:00:03]: loss 0.0469(0.0469) | lr 9.7577e-04
+05:33:50 01-25 [epoch 79 train] [step 100/114] [eta 0:00:00]: loss 0.0499(0.0530) | lr 9.7577e-04
+05:33:50 01-25 [epoch 79 train] [step 114/114] [eta 0:00:00]: loss 0.0470(0.0450) | lr 9.7577e-04
+05:33:51 01-25 [epoch 80 train] [step 1/114] [eta 0:00:05]: loss 0.0033(0.0450) | lr 9.7565e-04
+05:33:53 01-25 [epoch 80 train] [step 50/114] [eta 0:00:03]: loss 0.0680(0.0680) | lr 9.6940e-04
+05:33:55 01-25 [epoch 80 train] [step 100/114] [eta 0:00:00]: loss 0.0602(0.0525) | lr 9.6940e-04
+05:33:55 01-25 [epoch 80 train] [step 114/114] [eta 0:00:00]: loss 0.0593(0.0605) | lr 9.6940e-04
+05:34:21 01-25 [epoch 80 val]: acc_daxuanniu 100.0000 | acc_fangjian 100.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 66.6667 | acc_avg 85.4167 | Loss 0.8395
+05:33:57 01-25 [epoch 81 train] [step 1/114] [eta 0:00:09]: loss 0.0258(0.0602) | lr 9.6926e-04
+05:34:00 01-25 [epoch 81 train] [step 50/114] [eta 0:00:05]: loss 0.0621(0.0621) | lr 9.6232e-04
+05:34:26 01-25 [epoch 81 train] [step 100/114] [eta 0:00:00]: loss 0.0546(0.0470) | lr 9.6232e-04
+05:34:02 01-25 [epoch 81 train] [step 114/114] [eta 0:00:00]: loss 0.0543(0.0580) | lr 9.6232e-04
+05:34:03 01-25 [epoch 82 train] [step 1/114] [eta 0:00:05]: loss 0.0880(0.0597) | lr 9.6216e-04
+05:34:05 01-25 [epoch 82 train] [step 50/114] [eta 0:00:03]: loss 0.0397(0.0397) | lr 9.5453e-04
+05:34:07 01-25 [epoch 82 train] [step 100/114] [eta 0:00:00]: loss 0.0532(0.0667) | lr 9.5453e-04
+05:34:08 01-25 [epoch 82 train] [step 114/114] [eta 0:00:00]: loss 0.0517(0.0670) | lr 9.5453e-04
+05:34:08 01-25 [epoch 83 train] [step 1/114] [eta 0:00:05]: loss 0.0041(0.0666) | lr 9.5436e-04
+05:34:11 01-25 [epoch 83 train] [step 50/114] [eta 0:00:03]: loss 0.0434(0.0434) | lr 9.4605e-04
+05:34:13 01-25 [epoch 83 train] [step 100/114] [eta 0:00:00]: loss 0.0378(0.0322) | lr 9.4605e-04
+05:34:13 01-25 [epoch 83 train] [step 114/114] [eta 0:00:00]: loss 0.0396(0.0419) | lr 9.4605e-04
+05:34:14 01-25 [epoch 84 train] [step 1/114] [eta 0:00:05]: loss 0.0174(0.0416) | lr 9.4586e-04
+05:34:16 01-25 [epoch 84 train] [step 50/114] [eta 0:00:03]: loss 0.0318(0.0318) | lr 9.3689e-04
+05:34:18 01-25 [epoch 84 train] [step 100/114] [eta 0:00:00]: loss 0.0325(0.0331) | lr 9.3689e-04
+05:34:18 01-25 [epoch 84 train] [step 114/114] [eta 0:00:00]: loss 0.0336(0.0411) | lr 9.3689e-04
+05:34:19 01-25 [epoch 85 train] [step 1/114] [eta 0:00:05]: loss 0.3321(0.0477) | lr 9.3669e-04
+05:34:21 01-25 [epoch 85 train] [step 50/114] [eta 0:00:03]: loss 0.0260(0.0260) | lr 9.2706e-04
+05:34:23 01-25 [epoch 85 train] [step 100/114] [eta 0:00:00]: loss 0.0244(0.0228) | lr 9.2706e-04
+05:34:23 01-25 [epoch 85 train] [step 114/114] [eta 0:00:00]: loss 0.0238(0.0189) | lr 9.2706e-04
+05:34:24 01-25 [epoch 85 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 85.4167 | Loss 0.8421
+05:34:25 01-25 [epoch 86 train] [step 1/114] [eta 0:00:09]: loss 0.0003(0.0183) | lr 9.2685e-04
+05:34:27 01-25 [epoch 86 train] [step 50/114] [eta 0:00:05]: loss 0.0142(0.0142) | lr 9.1658e-04
+05:34:29 01-25 [epoch 86 train] [step 100/114] [eta 0:00:00]: loss 0.0291(0.0439) | lr 9.1658e-04
+05:34:30 01-25 [epoch 86 train] [step 114/114] [eta 0:00:00]: loss 0.0283(0.0466) | lr 9.1658e-04
+05:34:30 01-25 [epoch 87 train] [step 1/114] [eta 0:00:06]: loss 0.0016(0.0466) | lr 9.1636e-04
+05:34:33 01-25 [epoch 87 train] [step 50/114] [eta 0:00:03]: loss 0.0295(0.0295) | lr 9.0546e-04
+05:34:35 01-25 [epoch 87 train] [step 100/114] [eta 0:00:00]: loss 0.0240(0.0185) | lr 9.0546e-04
+05:34:35 01-25 [epoch 87 train] [step 114/114] [eta 0:00:00]: loss 0.0240(0.0212) | lr 9.0546e-04
+05:34:36 01-25 [epoch 88 train] [step 1/114] [eta 0:00:05]: loss 0.0129(0.0213) | lr 9.0523e-04
+05:34:38 01-25 [epoch 88 train] [step 50/114] [eta 0:00:03]: loss 0.0172(0.0172) | lr 8.9373e-04
+05:34:40 01-25 [epoch 88 train] [step 100/114] [eta 0:00:00]: loss 0.0152(0.0132) | lr 8.9373e-04
+05:34:40 01-25 [epoch 88 train] [step 114/114] [eta 0:00:00]: loss 0.0180(0.0203) | lr 8.9373e-04
+05:34:41 01-25 [epoch 89 train] [step 1/114] [eta 0:00:06]: loss 0.0059(0.0203) | lr 8.9349e-04
+05:34:43 01-25 [epoch 89 train] [step 50/114] [eta 0:00:03]: loss 0.0256(0.0256) | lr 8.8140e-04
+05:34:45 01-25 [epoch 89 train] [step 100/114] [eta 0:00:00]: loss 0.0215(0.0175) | lr 8.8140e-04
+05:34:46 01-25 [epoch 89 train] [step 114/114] [eta 0:00:00]: loss 0.0204(0.0197) | lr 8.8140e-04
+05:34:47 01-25 [epoch 90 train] [step 1/114] [eta 0:00:06]: loss 0.0302(0.0202) | lr 8.8114e-04
+05:34:49 01-25 [epoch 90 train] [step 50/114] [eta 0:00:03]: loss 0.0132(0.0132) | lr 8.6849e-04
+05:34:51 01-25 [epoch 90 train] [step 100/114] [eta 0:00:00]: loss 0.0167(0.0202) | lr 8.6849e-04
+05:34:51 01-25 [epoch 90 train] [step 114/114] [eta 0:00:00]: loss 0.0198(0.0300) | lr 8.6849e-04
+05:34:53 01-25 [epoch 90 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 85.7143 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 66.6667 | acc_avg 87.5000 | Loss 0.4950
+05:34:53 01-25 [epoch 91 train] [step 1/114] [eta 0:00:09]: loss 0.0262(0.0303) | lr 8.6822e-04
+05:34:56 01-25 [epoch 91 train] [step 50/114] [eta 0:00:05]: loss 0.0190(0.0190) | lr 8.5502e-04
+05:34:58 01-25 [epoch 91 train] [step 100/114] [eta 0:00:00]: loss 0.0216(0.0241) | lr 8.5502e-04
+05:34:58 01-25 [epoch 91 train] [step 114/114] [eta 0:00:00]: loss 0.0194(0.0127) | lr 8.5502e-04
+05:34:59 01-25 [epoch 92 train] [step 1/114] [eta 0:00:05]: loss 0.0044(0.0125) | lr 8.5474e-04
+05:35:01 01-25 [epoch 92 train] [step 50/114] [eta 0:00:03]: loss 0.0124(0.0124) | lr 8.4101e-04
+05:35:03 01-25 [epoch 92 train] [step 100/114] [eta 0:00:00]: loss 0.0150(0.0176) | lr 8.4101e-04
+05:35:03 01-25 [epoch 92 train] [step 114/114] [eta 0:00:00]: loss 0.0216(0.0317) | lr 8.4101e-04
+05:35:04 01-25 [epoch 93 train] [step 1/114] [eta 0:00:05]: loss 0.0018(0.0317) | lr 8.4072e-04
+05:35:06 01-25 [epoch 93 train] [step 50/114] [eta 0:00:03]: loss 0.0516(0.0516) | lr 8.2648e-04
+05:35:08 01-25 [epoch 93 train] [step 100/114] [eta 0:00:00]: loss 0.0349(0.0181) | lr 8.2648e-04
+05:35:09 01-25 [epoch 93 train] [step 114/114] [eta 0:00:00]: loss 0.0335(0.0205) | lr 8.2648e-04
+05:35:09 01-25 [epoch 94 train] [step 1/114] [eta 0:00:05]: loss 0.0218(0.0130) | lr 8.2618e-04
+05:35:11 01-25 [epoch 94 train] [step 50/114] [eta 0:00:03]: loss 0.0263(0.0263) | lr 8.1145e-04
+05:35:14 01-25 [epoch 94 train] [step 100/114] [eta 0:00:00]: loss 0.0199(0.0136) | lr 8.1145e-04
+05:35:14 01-25 [epoch 94 train] [step 114/114] [eta 0:00:00]: loss 0.0213(0.0201) | lr 8.1145e-04
+05:35:15 01-25 [epoch 95 train] [step 1/114] [eta 0:00:05]: loss 0.0081(0.0203) | lr 8.1114e-04
+05:35:17 01-25 [epoch 95 train] [step 50/114] [eta 0:00:03]: loss 0.0136(0.0136) | lr 7.9595e-04
+05:35:19 01-25 [epoch 95 train] [step 100/114] [eta 0:00:00]: loss 0.0199(0.0263) | lr 7.9595e-04
+05:35:20 01-25 [epoch 95 train] [step 114/114] [eta 0:00:00]: loss 0.0245(0.0282) | lr 7.9595e-04
+05:35:21 01-25 [epoch 95 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 85.4167 | Loss 0.6682
+05:35:22 01-25 [epoch 96 train] [step 1/114] [eta 0:00:10]: loss 0.0004(0.0281) | lr 7.9563e-04
+05:35:24 01-25 [epoch 96 train] [step 50/114] [eta 0:00:05]: loss 0.0372(0.0372) | lr 7.8001e-04
+05:35:26 01-25 [epoch 96 train] [step 100/114] [eta 0:00:00]: loss 0.0238(0.0105) | lr 7.8001e-04
+05:35:51 01-25 [epoch 96 train] [step 114/114] [eta 0:00:00]: loss 0.0237(0.0139) | lr 7.8001e-04
+05:35:27 01-25 [epoch 97 train] [step 1/114] [eta 0:00:05]: loss 0.0039(0.0140) | lr 7.7968e-04
+05:35:29 01-25 [epoch 97 train] [step 50/114] [eta 0:00:03]: loss 0.0157(0.0157) | lr 7.6364e-04
+05:35:31 01-25 [epoch 97 train] [step 100/114] [eta 0:00:00]: loss 0.0197(0.0237) | lr 7.6364e-04
+05:35:32 01-25 [epoch 97 train] [step 114/114] [eta 0:00:00]: loss 0.0211(0.0280) | lr 7.6364e-04
+05:35:32 01-25 [epoch 98 train] [step 1/114] [eta 0:00:05]: loss 0.0002(0.0280) | lr 7.6330e-04
+05:35:34 01-25 [epoch 98 train] [step 50/114] [eta 0:00:03]: loss 0.0204(0.0204) | lr 7.4687e-04
+05:35:36 01-25 [epoch 98 train] [step 100/114] [eta 0:00:00]: loss 0.0131(0.0058) | lr 7.4687e-04
+05:35:37 01-25 [epoch 98 train] [step 114/114] [eta 0:00:00]: loss 0.0192(0.0215) | lr 7.4687e-04
+05:35:37 01-25 [epoch 99 train] [step 1/114] [eta 0:00:05]: loss 0.0047(0.0216) | lr 7.4652e-04
+05:35:39 01-25 [epoch 99 train] [step 50/114] [eta 0:00:03]: loss 0.0324(0.0324) | lr 7.2973e-04
+05:35:41 01-25 [epoch 99 train] [step 100/114] [eta 0:00:00]: loss 0.0223(0.0121) | lr 7.2973e-04
+05:36:06 01-25 [epoch 99 train] [step 114/114] [eta 0:00:00]: loss 0.0205(0.0091) | lr 7.2973e-04
+05:35:42 01-25 [epoch 100 train] [step 1/114] [eta 0:00:05]: loss 0.0013(0.0090) | lr 7.2938e-04
+05:35:45 01-25 [epoch 100 train] [step 50/114] [eta 0:00:03]: loss 0.0182(0.0182) | lr 7.1224e-04
+05:35:47 01-25 [epoch 100 train] [step 100/114] [eta 0:00:00]: loss 0.0172(0.0161) | lr 7.1224e-04
+05:35:47 01-25 [epoch 100 train] [step 114/114] [eta 0:00:00]: loss 0.0169(0.0147) | lr 7.1224e-04
+05:35:49 01-25 [epoch 100 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 75.0000 | acc_yuanpan 83.3333 | acc_avg 83.3333 | Loss 0.9587
+05:35:50 01-25 [epoch 101 train] [step 1/114] [eta 0:00:10]: loss 0.0458(0.0156) | lr 7.1188e-04
+05:36:16 01-25 [epoch 101 train] [step 50/114] [eta 0:00:06]: loss 0.0214(0.0214) | lr 6.9443e-04
+05:35:54 01-25 [epoch 101 train] [step 100/114] [eta 0:00:00]: loss 0.0170(0.0127) | lr 6.9443e-04
+05:35:54 01-25 [epoch 101 train] [step 114/114] [eta 0:00:00]: loss 0.0157(0.0126) | lr 6.9443e-04
+05:35:55 01-25 [epoch 102 train] [step 1/114] [eta 0:00:05]: loss 0.0002(0.0125) | lr 6.9407e-04
+05:35:57 01-25 [epoch 102 train] [step 50/114] [eta 0:00:03]: loss 0.0491(0.0491) | lr 6.7633e-04
+05:35:59 01-25 [epoch 102 train] [step 100/114] [eta 0:00:00]: loss 0.0400(0.0310) | lr 6.7633e-04
+05:35:59 01-25 [epoch 102 train] [step 114/114] [eta 0:00:00]: loss 0.0357(0.0186) | lr 6.7633e-04
+05:36:00 01-25 [epoch 103 train] [step 1/114] [eta 0:00:05]: loss 0.0208(0.0190) | lr 6.7596e-04
+05:36:02 01-25 [epoch 103 train] [step 50/114] [eta 0:00:03]: loss 0.0093(0.0093) | lr 6.5796e-04
+05:36:04 01-25 [epoch 103 train] [step 100/114] [eta 0:00:00]: loss 0.0161(0.0230) | lr 6.5796e-04
+05:36:05 01-25 [epoch 103 train] [step 114/114] [eta 0:00:00]: loss 0.0156(0.0218) | lr 6.5796e-04
+05:36:05 01-25 [epoch 104 train] [step 1/114] [eta 0:00:05]: loss 0.0001(0.0105) | lr 6.5759e-04
+05:36:07 01-25 [epoch 104 train] [step 50/114] [eta 0:00:03]: loss 0.0206(0.0206) | lr 6.3936e-04
+05:36:10 01-25 [epoch 104 train] [step 100/114] [eta 0:00:00]: loss 0.0179(0.0152) | lr 6.3936e-04
+05:36:10 01-25 [epoch 104 train] [step 114/114] [eta 0:00:00]: loss 0.0167(0.0126) | lr 6.3936e-04
+05:36:11 01-25 [epoch 105 train] [step 1/114] [eta 0:00:06]: loss 0.0006(0.0124) | lr 6.3899e-04
+05:36:13 01-25 [epoch 105 train] [step 50/114] [eta 0:00:03]: loss 0.0086(0.0086) | lr 6.2056e-04
+05:36:16 01-25 [epoch 105 train] [step 100/114] [eta 0:00:00]: loss 0.0133(0.0179) | lr 6.2056e-04
+05:36:16 01-25 [epoch 105 train] [step 114/114] [eta 0:00:00]: loss 0.0120(0.0179) | lr 6.2056e-04
+05:36:18 01-25 [epoch 105 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 85.4167 | Loss 1.4953
+05:36:19 01-25 [epoch 106 train] [step 1/114] [eta 0:00:10]: loss 0.0242(0.0184) | lr 6.2018e-04
+05:36:21 01-25 [epoch 106 train] [step 50/114] [eta 0:00:05]: loss 0.0341(0.0341) | lr 6.0157e-04
+05:36:23 01-25 [epoch 106 train] [step 100/114] [eta 0:00:00]: loss 0.0274(0.0207) | lr 6.0157e-04
+05:36:24 01-25 [epoch 106 train] [step 114/114] [eta 0:00:00]: loss 0.0248(0.0174) | lr 6.0157e-04
+05:36:25 01-25 [epoch 107 train] [step 1/114] [eta 0:00:06]: loss 0.2407(0.0219) | lr 6.0119e-04
+05:36:27 01-25 [epoch 107 train] [step 50/114] [eta 0:00:03]: loss 0.0151(0.0151) | lr 5.8244e-04
+05:36:29 01-25 [epoch 107 train] [step 100/114] [eta 0:00:00]: loss 0.0193(0.0234) | lr 5.8244e-04
+05:36:29 01-25 [epoch 107 train] [step 114/114] [eta 0:00:00]: loss 0.0174(0.0227) | lr 5.8244e-04
+05:36:30 01-25 [epoch 108 train] [step 1/114] [eta 0:00:05]: loss 0.0003(0.0227) | lr 5.8205e-04
+05:36:32 01-25 [epoch 108 train] [step 50/114] [eta 0:00:03]: loss 0.0214(0.0214) | lr 5.6318e-04
+05:36:33 01-25 [epoch 108 train] [step 100/114] [eta 0:00:00]: loss 0.0205(0.0195) | lr 5.6318e-04
+05:36:34 01-25 [epoch 108 train] [step 114/114] [eta 0:00:00]: loss 0.0190(0.0208) | lr 5.6318e-04
+05:36:34 01-25 [epoch 109 train] [step 1/114] [eta 0:00:04]: loss 0.0003(0.0207) | lr 5.6279e-04
+05:36:36 01-25 [epoch 109 train] [step 50/114] [eta 0:00:03]: loss 0.0174(0.0174) | lr 5.4384e-04
+05:36:39 01-25 [epoch 109 train] [step 100/114] [eta 0:00:00]: loss 0.0170(0.0166) | lr 5.4384e-04
+05:36:39 01-25 [epoch 109 train] [step 114/114] [eta 0:00:00]: loss 0.0153(0.0120) | lr 5.4384e-04
+05:36:40 01-25 [epoch 110 train] [step 1/114] [eta 0:00:06]: loss 0.0079(0.0122) | lr 5.4345e-04
+05:36:42 01-25 [epoch 110 train] [step 50/114] [eta 0:00:03]: loss 0.0137(0.0137) | lr 5.2443e-04
+05:36:44 01-25 [epoch 110 train] [step 100/114] [eta 0:00:00]: loss 0.0121(0.0104) | lr 5.2443e-04
+05:36:45 01-25 [epoch 110 train] [step 114/114] [eta 0:00:00]: loss 0.0125(0.0137) | lr 5.2443e-04
+05:36:46 01-25 [epoch 110 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 85.7143 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 66.6667 | acc_avg 87.5000 | Loss 0.6200
+05:37:11 01-25 [epoch 111 train] [step 1/114] [eta 0:00:09]: loss 0.0022(0.0137) | lr 5.2404e-04
+05:36:49 01-25 [epoch 111 train] [step 50/114] [eta 0:00:05]: loss 0.0135(0.0135) | lr 5.0500e-04
+05:36:51 01-25 [epoch 111 train] [step 100/114] [eta 0:00:00]: loss 0.0115(0.0096) | lr 5.0500e-04
+05:36:51 01-25 [epoch 111 train] [step 114/114] [eta 0:00:00]: loss 0.0126(0.0118) | lr 5.0500e-04
+05:37:16 01-25 [epoch 112 train] [step 1/114] [eta 0:00:05]: loss 0.0009(0.0118) | lr 5.0461e-04
+05:36:54 01-25 [epoch 112 train] [step 50/114] [eta 0:00:03]: loss 0.0236(0.0236) | lr 4.8557e-04
+05:36:56 01-25 [epoch 112 train] [step 100/114] [eta 0:00:00]: loss 0.0161(0.0085) | lr 4.8557e-04
+05:36:56 01-25 [epoch 112 train] [step 114/114] [eta 0:00:00]: loss 0.0144(0.0071) | lr 4.8557e-04
+05:36:57 01-25 [epoch 113 train] [step 1/114] [eta 0:00:06]: loss 0.0016(0.0071) | lr 4.8518e-04
+05:36:59 01-25 [epoch 113 train] [step 50/114] [eta 0:00:03]: loss 0.0098(0.0098) | lr 4.6616e-04
+05:37:02 01-25 [epoch 113 train] [step 100/114] [eta 0:00:00]: loss 0.0159(0.0220) | lr 4.6616e-04
+05:37:02 01-25 [epoch 113 train] [step 114/114] [eta 0:00:00]: loss 0.0151(0.0086) | lr 4.6616e-04
+05:37:03 01-25 [epoch 114 train] [step 1/114] [eta 0:00:05]: loss 0.0046(0.0069) | lr 4.6578e-04
+05:37:05 01-25 [epoch 114 train] [step 50/114] [eta 0:00:03]: loss 0.0065(0.0065) | lr 4.4682e-04
+05:37:07 01-25 [epoch 114 train] [step 100/114] [eta 0:00:00]: loss 0.0077(0.0089) | lr 4.4682e-04
+05:37:08 01-25 [epoch 114 train] [step 114/114] [eta 0:00:00]: loss 0.0087(0.0129) | lr 4.4682e-04
+05:37:08 01-25 [epoch 115 train] [step 1/114] [eta 0:00:06]: loss 0.0001(0.0129) | lr 4.4643e-04
+05:37:11 01-25 [epoch 115 train] [step 50/114] [eta 0:00:03]: loss 0.0049(0.0049) | lr 4.2756e-04
+05:37:13 01-25 [epoch 115 train] [step 100/114] [eta 0:00:00]: loss 0.0077(0.0106) | lr 4.2756e-04
+05:37:14 01-25 [epoch 115 train] [step 114/114] [eta 0:00:00]: loss 0.0070(0.0047) | lr 4.2756e-04
+05:37:15 01-25 [epoch 115 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 85.7143 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 89.5833 | Loss 0.6701
+05:37:16 01-25 [epoch 116 train] [step 1/114] [eta 0:00:10]: loss 0.0007(0.0046) | lr 4.2718e-04
+05:37:18 01-25 [epoch 116 train] [step 50/114] [eta 0:00:05]: loss 0.0039(0.0039) | lr 4.0843e-04
+05:37:20 01-25 [epoch 116 train] [step 100/114] [eta 0:00:00]: loss 0.0060(0.0080) | lr 4.0843e-04
+05:37:21 01-25 [epoch 116 train] [step 114/114] [eta 0:00:00]: loss 0.0058(0.0071) | lr 4.0843e-04
+05:37:21 01-25 [epoch 117 train] [step 1/114] [eta 0:00:06]: loss 0.0005(0.0072) | lr 4.0805e-04
+05:37:23 01-25 [epoch 117 train] [step 50/114] [eta 0:00:03]: loss 0.0499(0.0499) | lr 3.8944e-04
+05:37:26 01-25 [epoch 117 train] [step 100/114] [eta 0:00:00]: loss 0.0282(0.0065) | lr 3.8944e-04
+05:37:26 01-25 [epoch 117 train] [step 114/114] [eta 0:00:00]: loss 0.0265(0.0088) | lr 3.8944e-04
+05:37:51 01-25 [epoch 118 train] [step 1/114] [eta 0:00:06]: loss 0.0021(0.0086) | lr 3.8907e-04
+05:37:29 01-25 [epoch 118 train] [step 50/114] [eta 0:00:03]: loss 0.0042(0.0042) | lr 3.7064e-04
+05:37:31 01-25 [epoch 118 train] [step 100/114] [eta 0:00:00]: loss 0.0097(0.0152) | lr 3.7064e-04
+05:37:56 01-25 [epoch 118 train] [step 114/114] [eta 0:00:00]: loss 0.0090(0.0046) | lr 3.7064e-04
+05:37:33 01-25 [epoch 119 train] [step 1/114] [eta 0:00:06]: loss 0.0002(0.0046) | lr 3.7026e-04
+05:37:35 01-25 [epoch 119 train] [step 50/114] [eta 0:00:04]: loss 0.0156(0.0156) | lr 3.5204e-04
+05:37:38 01-25 [epoch 119 train] [step 100/114] [eta 0:00:00]: loss 0.0106(0.0056) | lr 3.5204e-04
+05:37:39 01-25 [epoch 119 train] [step 114/114] [eta 0:00:00]: loss 0.0134(0.0144) | lr 3.5204e-04
+05:37:40 01-25 [epoch 120 train] [step 1/114] [eta 0:00:08]: loss 0.0616(0.0156) | lr 3.5167e-04
+05:37:42 01-25 [epoch 120 train] [step 50/114] [eta 0:00:04]: loss 0.0046(0.0046) | lr 3.3367e-04
+05:37:45 01-25 [epoch 120 train] [step 100/114] [eta 0:00:00]: loss 0.0054(0.0063) | lr 3.3367e-04
+05:37:45 01-25 [epoch 120 train] [step 114/114] [eta 0:00:00]: loss 0.0075(0.0101) | lr 3.3367e-04
+05:37:47 01-25 [epoch 120 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 85.7143 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 89.5833 | Loss 0.7115
+05:37:47 01-25 [epoch 121 train] [step 1/114] [eta 0:00:09]: loss 0.0004(0.0101) | lr 3.3331e-04
+05:37:49 01-25 [epoch 121 train] [step 50/114] [eta 0:00:05]: loss 0.0069(0.0069) | lr 3.1557e-04
+05:37:52 01-25 [epoch 121 train] [step 100/114] [eta 0:00:00]: loss 0.0062(0.0055) | lr 3.1557e-04
+05:37:52 01-25 [epoch 121 train] [step 114/114] [eta 0:00:00]: loss 0.0057(0.0047) | lr 3.1557e-04
+05:37:53 01-25 [epoch 122 train] [step 1/114] [eta 0:00:06]: loss 0.0003(0.0046) | lr 3.1522e-04
+05:37:55 01-25 [epoch 122 train] [step 50/114] [eta 0:00:03]: loss 0.0025(0.0025) | lr 2.9776e-04
+05:37:57 01-25 [epoch 122 train] [step 100/114] [eta 0:00:00]: loss 0.0035(0.0045) | lr 2.9776e-04
+05:37:57 01-25 [epoch 122 train] [step 114/114] [eta 0:00:00]: loss 0.0077(0.0131) | lr 2.9776e-04
+05:37:58 01-25 [epoch 123 train] [step 1/114] [eta 0:00:05]: loss 0.0065(0.0132) | lr 2.9741e-04
+05:38:00 01-25 [epoch 123 train] [step 50/114] [eta 0:00:03]: loss 0.0076(0.0076) | lr 2.8027e-04
+05:38:02 01-25 [epoch 123 train] [step 100/114] [eta 0:00:00]: loss 0.0079(0.0082) | lr 2.8027e-04
+05:38:03 01-25 [epoch 123 train] [step 114/114] [eta 0:00:00]: loss 0.0096(0.0105) | lr 2.8027e-04
+05:38:03 01-25 [epoch 124 train] [step 1/114] [eta 0:00:05]: loss 0.0087(0.0107) | lr 2.7993e-04
+05:38:05 01-25 [epoch 124 train] [step 50/114] [eta 0:00:03]: loss 0.0046(0.0046) | lr 2.6313e-04
+05:38:07 01-25 [epoch 124 train] [step 100/114] [eta 0:00:00]: loss 0.0076(0.0105) | lr 2.6313e-04
+05:38:08 01-25 [epoch 124 train] [step 114/114] [eta 0:00:00]: loss 0.0069(0.0091) | lr 2.6313e-04
+05:38:09 01-25 [epoch 125 train] [step 1/114] [eta 0:00:07]: loss 0.0002(0.0091) | lr 2.6280e-04
+05:38:11 01-25 [epoch 125 train] [step 50/114] [eta 0:00:03]: loss 0.0027(0.0027) | lr 2.4636e-04
+05:38:14 01-25 [epoch 125 train] [step 100/114] [eta 0:00:00]: loss 0.0072(0.0117) | lr 2.4636e-04
+05:38:14 01-25 [epoch 125 train] [step 114/114] [eta 0:00:00]: loss 0.0074(0.0136) | lr 2.4636e-04
+05:38:15 01-25 [epoch 125 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 85.4167 | Loss 1.0456
+05:38:16 01-25 [epoch 126 train] [step 1/114] [eta 0:00:09]: loss 0.0008(0.0136) | lr 2.4604e-04
+05:38:18 01-25 [epoch 126 train] [step 50/114] [eta 0:00:05]: loss 0.0169(0.0169) | lr 2.2999e-04
+05:38:21 01-25 [epoch 126 train] [step 100/114] [eta 0:00:00]: loss 0.0111(0.0052) | lr 2.2999e-04
+05:38:21 01-25 [epoch 126 train] [step 114/114] [eta 0:00:00]: loss 0.0103(0.0051) | lr 2.2999e-04
+05:38:22 01-25 [epoch 127 train] [step 1/114] [eta 0:00:05]: loss 0.0010(0.0052) | lr 2.2967e-04
+05:38:24 01-25 [epoch 127 train] [step 50/114] [eta 0:00:03]: loss 0.0079(0.0079) | lr 2.1405e-04
+05:38:26 01-25 [epoch 127 train] [step 100/114] [eta 0:00:00]: loss 0.0082(0.0086) | lr 2.1405e-04
+05:38:27 01-25 [epoch 127 train] [step 114/114] [eta 0:00:00]: loss 0.0081(0.0090) | lr 2.1405e-04
+05:38:27 01-25 [epoch 128 train] [step 1/114] [eta 0:00:06]: loss 0.0007(0.0090) | lr 2.1374e-04
+05:38:30 01-25 [epoch 128 train] [step 50/114] [eta 0:00:03]: loss 0.0123(0.0123) | lr 1.9855e-04
+05:38:56 01-25 [epoch 128 train] [step 100/114] [eta 0:00:00]: loss 0.0113(0.0103) | lr 1.9855e-04
+05:38:33 01-25 [epoch 128 train] [step 114/114] [eta 0:00:00]: loss 0.0103(0.0099) | lr 1.9855e-04
+05:38:33 01-25 [epoch 129 train] [step 1/114] [eta 0:00:06]: loss 0.0014(0.0099) | lr 1.9825e-04
+05:38:35 01-25 [epoch 129 train] [step 50/114] [eta 0:00:03]: loss 0.0051(0.0051) | lr 1.8352e-04
+05:38:38 01-25 [epoch 129 train] [step 100/114] [eta 0:00:00]: loss 0.0128(0.0205) | lr 1.8352e-04
+05:38:38 01-25 [epoch 129 train] [step 114/114] [eta 0:00:00]: loss 0.0121(0.0221) | lr 1.8352e-04
+05:38:39 01-25 [epoch 130 train] [step 1/114] [eta 0:00:06]: loss 0.0001(0.0220) | lr 1.8323e-04
+05:38:41 01-25 [epoch 130 train] [step 50/114] [eta 0:00:03]: loss 0.0056(0.0056) | lr 1.6899e-04
+05:38:44 01-25 [epoch 130 train] [step 100/114] [eta 0:00:00]: loss 0.0106(0.0157) | lr 1.6899e-04
+05:38:44 01-25 [epoch 130 train] [step 114/114] [eta 0:00:00]: loss 0.0098(0.0068) | lr 1.6899e-04
+05:38:46 01-25 [epoch 130 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 71.4286 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 87.5000 | Loss 0.6829
+05:38:46 01-25 [epoch 131 train] [step 1/114] [eta 0:00:10]: loss 0.0004(0.0067) | lr 1.6871e-04
+05:38:48 01-25 [epoch 131 train] [step 50/114] [eta 0:00:05]: loss 0.0047(0.0047) | lr 1.5498e-04
+05:38:51 01-25 [epoch 131 train] [step 100/114] [eta 0:00:00]: loss 0.0051(0.0055) | lr 1.5498e-04
+05:38:51 01-25 [epoch 131 train] [step 114/114] [eta 0:00:00]: loss 0.0058(0.0045) | lr 1.5498e-04
+05:38:52 01-25 [epoch 132 train] [step 1/114] [eta 0:00:06]: loss 0.0001(0.0045) | lr 1.5471e-04
+05:38:54 01-25 [epoch 132 train] [step 50/114] [eta 0:00:03]: loss 0.0097(0.0097) | lr 1.4151e-04
+05:38:56 01-25 [epoch 132 train] [step 100/114] [eta 0:00:00]: loss 0.0067(0.0038) | lr 1.4151e-04
+05:38:57 01-25 [epoch 132 train] [step 114/114] [eta 0:00:00]: loss 0.0068(0.0036) | lr 1.4151e-04
+05:38:57 01-25 [epoch 133 train] [step 1/114] [eta 0:00:06]: loss 0.0002(0.0036) | lr 1.4125e-04
+05:39:00 01-25 [epoch 133 train] [step 50/114] [eta 0:00:03]: loss 0.0088(0.0088) | lr 1.2860e-04
+05:39:02 01-25 [epoch 133 train] [step 100/114] [eta 0:00:00]: loss 0.0088(0.0088) | lr 1.2860e-04
+05:39:02 01-25 [epoch 133 train] [step 114/114] [eta 0:00:00]: loss 0.0079(0.0052) | lr 1.2860e-04
+05:39:03 01-25 [epoch 134 train] [step 1/114] [eta 0:00:06]: loss 0.0066(0.0053) | lr 1.2835e-04
+05:39:05 01-25 [epoch 134 train] [step 50/114] [eta 0:00:03]: loss 0.0066(0.0066) | lr 1.1627e-04
+05:39:07 01-25 [epoch 134 train] [step 100/114] [eta 0:00:00]: loss 0.0047(0.0027) | lr 1.1627e-04
+05:39:08 01-25 [epoch 134 train] [step 114/114] [eta 0:00:00]: loss 0.0043(0.0018) | lr 1.1627e-04
+05:39:08 01-25 [epoch 135 train] [step 1/114] [eta 0:00:05]: loss 0.0005(0.0018) | lr 1.1603e-04
+05:39:11 01-25 [epoch 135 train] [step 50/114] [eta 0:00:03]: loss 0.0090(0.0090) | lr 1.0454e-04
+05:39:13 01-25 [epoch 135 train] [step 100/114] [eta 0:00:00]: loss 0.0214(0.0339) | lr 1.0454e-04
+05:39:13 01-25 [epoch 135 train] [step 114/114] [eta 0:00:00]: loss 0.0197(0.0358) | lr 1.0454e-04
+05:39:15 01-25 [epoch 135 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 71.4286 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 87.5000 | Loss 0.8020
+05:39:16 01-25 [epoch 136 train] [step 1/114] [eta 0:00:09]: loss 0.0118(0.0360) | lr 1.0431e-04
+05:39:17 01-25 [epoch 136 train] [step 50/114] [eta 0:00:05]: loss 0.0050(0.0050) | lr 9.3423e-05
+05:39:19 01-25 [epoch 136 train] [step 100/114] [eta 0:00:00]: loss 0.0051(0.0053) | lr 9.3423e-05
+05:39:20 01-25 [epoch 136 train] [step 114/114] [eta 0:00:00]: loss 0.0049(0.0036) | lr 9.3423e-05
+05:39:21 01-25 [epoch 137 train] [step 1/114] [eta 0:00:05]: loss 0.0002(0.0035) | lr 9.3213e-05
+05:39:23 01-25 [epoch 137 train] [step 50/114] [eta 0:00:03]: loss 0.0065(0.0065) | lr 8.2943e-05
+05:39:25 01-25 [epoch 137 train] [step 100/114] [eta 0:00:00]: loss 0.0099(0.0132) | lr 8.2943e-05
+05:39:26 01-25 [epoch 137 train] [step 114/114] [eta 0:00:00]: loss 0.0123(0.0145) | lr 8.2943e-05
+05:39:27 01-25 [epoch 138 train] [step 1/114] [eta 0:00:07]: loss 0.0019(0.0145) | lr 8.2747e-05
+05:39:29 01-25 [epoch 138 train] [step 50/114] [eta 0:00:04]: loss 0.0030(0.0030) | lr 7.3114e-05
+05:39:56 01-25 [epoch 138 train] [step 100/114] [eta 0:00:00]: loss 0.0120(0.0209) | lr 7.3114e-05
+05:39:33 01-25 [epoch 138 train] [step 114/114] [eta 0:00:00]: loss 0.0113(0.0151) | lr 7.3114e-05
+05:39:34 01-25 [epoch 139 train] [step 1/114] [eta 0:00:07]: loss 0.0090(0.0153) | lr 7.2931e-05
+05:39:36 01-25 [epoch 139 train] [step 50/114] [eta 0:00:03]: loss 0.0064(0.0064) | lr 6.3952e-05
+05:39:38 01-25 [epoch 139 train] [step 100/114] [eta 0:00:00]: loss 0.0063(0.0063) | lr 6.3952e-05
+05:39:38 01-25 [epoch 139 train] [step 114/114] [eta 0:00:00]: loss 0.0059(0.0058) | lr 6.3952e-05
+05:39:39 01-25 [epoch 140 train] [step 1/114] [eta 0:00:06]: loss 0.0003(0.0058) | lr 6.3782e-05
+05:39:41 01-25 [epoch 140 train] [step 50/114] [eta 0:00:03]: loss 0.0091(0.0091) | lr 5.5469e-05
+05:39:43 01-25 [epoch 140 train] [step 100/114] [eta 0:00:00]: loss 0.0092(0.0093) | lr 5.5469e-05
+05:39:44 01-25 [epoch 140 train] [step 114/114] [eta 0:00:00]: loss 0.0094(0.0087) | lr 5.5469e-05
+05:39:45 01-25 [epoch 140 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 57.1428 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 85.4167 | Loss 0.7416
+05:39:46 01-25 [epoch 141 train] [step 1/114] [eta 0:00:09]: loss 0.0004(0.0086) | lr 5.5313e-05
+05:39:48 01-25 [epoch 141 train] [step 50/114] [eta 0:00:05]: loss 0.0112(0.0112) | lr 4.7680e-05
+05:39:51 01-25 [epoch 141 train] [step 100/114] [eta 0:00:00]: loss 0.0122(0.0133) | lr 4.7680e-05
+05:39:52 01-25 [epoch 141 train] [step 114/114] [eta 0:00:00]: loss 0.0137(0.0174) | lr 4.7680e-05
+05:39:53 01-25 [epoch 142 train] [step 1/114] [eta 0:00:07]: loss 0.0017(0.0174) | lr 4.7538e-05
+05:39:55 01-25 [epoch 142 train] [step 50/114] [eta 0:00:03]: loss 0.0029(0.0029) | lr 4.0595e-05
+05:40:21 01-25 [epoch 142 train] [step 100/114] [eta 0:00:00]: loss 0.0064(0.0100) | lr 4.0595e-05
+05:39:58 01-25 [epoch 142 train] [step 114/114] [eta 0:00:00]: loss 0.0091(0.0109) | lr 4.0595e-05
+05:39:58 01-25 [epoch 143 train] [step 1/114] [eta 0:00:05]: loss 0.0026(0.0110) | lr 4.0468e-05
+05:40:01 01-25 [epoch 143 train] [step 50/114] [eta 0:00:03]: loss 0.0044(0.0044) | lr 3.4227e-05
+05:40:03 01-25 [epoch 143 train] [step 100/114] [eta 0:00:00]: loss 0.0035(0.0025) | lr 3.4227e-05
+05:40:04 01-25 [epoch 143 train] [step 114/114] [eta 0:00:00]: loss 0.0036(0.0027) | lr 3.4227e-05
+05:40:05 01-25 [epoch 144 train] [step 1/114] [eta 0:00:07]: loss 0.0000(0.0027) | lr 3.4114e-05
+05:40:07 01-25 [epoch 144 train] [step 50/114] [eta 0:00:04]: loss 0.0055(0.0055) | lr 2.8585e-05
+05:40:10 01-25 [epoch 144 train] [step 100/114] [eta 0:00:00]: loss 0.0078(0.0102) | lr 2.8585e-05
+05:40:10 01-25 [epoch 144 train] [step 114/114] [eta 0:00:00]: loss 0.0076(0.0111) | lr 2.8585e-05
+05:40:11 01-25 [epoch 145 train] [step 1/114] [eta 0:00:06]: loss 0.0004(0.0110) | lr 2.8487e-05
+05:40:13 01-25 [epoch 145 train] [step 50/114] [eta 0:00:03]: loss 0.0057(0.0057) | lr 2.3677e-05
+05:40:15 01-25 [epoch 145 train] [step 100/114] [eta 0:00:00]: loss 0.0043(0.0029) | lr 2.3677e-05
+05:40:16 01-25 [epoch 145 train] [step 114/114] [eta 0:00:00]: loss 0.0042(0.0034) | lr 2.3677e-05
+05:40:41 01-25 [epoch 145 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 71.4286 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 87.5000 | Loss 0.6406
+05:40:18 01-25 [epoch 146 train] [step 1/114] [eta 0:00:09]: loss 0.0002(0.0033) | lr 2.3594e-05
+05:40:20 01-25 [epoch 146 train] [step 50/114] [eta 0:00:05]: loss 0.0049(0.0049) | lr 1.9511e-05
+05:40:22 01-25 [epoch 146 train] [step 100/114] [eta 0:00:00]: loss 0.0054(0.0059) | lr 1.9511e-05
+05:40:23 01-25 [epoch 146 train] [step 114/114] [eta 0:00:00]: loss 0.0053(0.0068) | lr 1.9511e-05
+05:40:24 01-25 [epoch 147 train] [step 1/114] [eta 0:00:06]: loss 0.0014(0.0069) | lr 1.9443e-05
+05:40:26 01-25 [epoch 147 train] [step 50/114] [eta 0:00:03]: loss 0.0148(0.0148) | lr 1.6094e-05
+05:40:28 01-25 [epoch 147 train] [step 100/114] [eta 0:00:00]: loss 0.0133(0.0118) | lr 1.6094e-05
+05:40:29 01-25 [epoch 147 train] [step 114/114] [eta 0:00:00]: loss 0.0131(0.0143) | lr 1.6094e-05
+05:40:30 01-25 [epoch 148 train] [step 1/114] [eta 0:00:06]: loss 0.0002(0.0071) | lr 1.6041e-05
+05:40:32 01-25 [epoch 148 train] [step 50/114] [eta 0:00:04]: loss 0.0046(0.0046) | lr 1.3431e-05
+05:40:35 01-25 [epoch 148 train] [step 100/114] [eta 0:00:00]: loss 0.0050(0.0054) | lr 1.3431e-05
+05:40:35 01-25 [epoch 148 train] [step 114/114] [eta 0:00:00]: loss 0.0066(0.0086) | lr 1.3431e-05
+05:40:36 01-25 [epoch 149 train] [step 1/114] [eta 0:00:07]: loss 0.0012(0.0086) | lr 1.3393e-05
+05:40:38 01-25 [epoch 149 train] [step 50/114] [eta 0:00:03]: loss 0.0027(0.0027) | lr 1.1526e-05
+05:40:41 01-25 [epoch 149 train] [step 100/114] [eta 0:00:00]: loss 0.0039(0.0050) | lr 1.1526e-05
+05:40:41 01-25 [epoch 149 train] [step 114/114] [eta 0:00:00]: loss 0.0080(0.0121) | lr 1.1526e-05
+05:40:42 01-25 [epoch 150 train] [step 1/114] [eta 0:00:06]: loss 0.0035(0.0122) | lr 1.1503e-05
+05:40:45 01-25 [epoch 150 train] [step 50/114] [eta 0:00:04]: loss 0.0026(0.0026) | lr 1.0382e-05
+05:40:47 01-25 [epoch 150 train] [step 100/114] [eta 0:00:00]: loss 0.0031(0.0036) | lr 1.0382e-05
+05:41:12 01-25 [epoch 150 train] [step 114/114] [eta 0:00:00]: loss 0.0051(0.0083) | lr 1.0382e-05
+05:40:49 01-25 [epoch 150 val]: acc_daxuanniu 100.0000 | acc_fangjian 50.0000 | acc_fangxiangjian 88.8889 | acc_sandianyuanxuanniu 100.0000 | acc_tuoyuanjian 71.4286 | acc_xiaoxuanniu 100.0000 | acc_youjian 87.5000 | acc_yuanpan 83.3333 | acc_avg 87.5000 | Loss 0.7704

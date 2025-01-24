@@ -62,6 +62,7 @@ class Dataset(tDataset):
         for ann_path in tqdm((ann_dir / 'test').glob("*.txt"), leave=False, mininterval=0.5):
             vocabulary.add(ann_path.read_text().splitlines()[0].lower())
         self.vocabulary = {word: idx for idx, word in enumerate(sorted(vocabulary))}
+        self.dictionary = {idx: word for word, idx in self.vocabulary.items()}
         print(f"Vocabulary prepared - {len(self.vocabulary)} words: {self.vocabulary}")
 
     def __getitem__(self, idx):
@@ -110,7 +111,7 @@ def get_train_val_loaders(
         batch_size: int,
         num_workers: int = 0,
         seed: Optional[int] = None,
-) -> Tuple[DataLoader, DataLoader, int]:
+) -> Tuple[DataLoader, DataLoader, int, dict]:
     data = Dataset(root=root, istrain=True)
     num_classes = len(data.vocabulary)
     data_train, data_val = data.split(*split_ratio,
@@ -130,7 +131,7 @@ def get_train_val_loaders(
                             batch_sampler=sampler_val,
                             collate_fn=collate_fn,
                             num_workers=num_workers)
-    return loader_train, loader_val, num_classes
+    return loader_train, loader_val, num_classes, data.dictionary
 
 
 def get_test_loader(
@@ -138,7 +139,7 @@ def get_test_loader(
         transform: Optional[Callable],
         batch_size: int = 1,
         num_workers: int = 0,
-) -> Tuple[DataLoader, int]:
+) -> Tuple[DataLoader, int, dict]:
     data = Dataset(root=root, istrain=False, transform=transform)
     num_classes = len(data.vocabulary)
     collate_fn = get_collate_fn(num_classes)
@@ -148,4 +149,4 @@ def get_test_loader(
                         batch_sampler=sampler,
                         collate_fn=collate_fn,
                         num_workers=num_workers)
-    return loader, num_classes
+    return loader, num_classes, data.dictionary

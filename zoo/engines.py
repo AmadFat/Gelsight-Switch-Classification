@@ -21,8 +21,6 @@ def train_one_epoch(
         device: torch.device = torch.device("cpu"),
 ) -> None:
     model.train()
-    if lr_scheduler is not None:
-        lr_scheduler.step()
     for imgs, anns in loader:
         optimizer.zero_grad()
         imgs, anns = imgs.to(device), anns.to(device)
@@ -37,6 +35,8 @@ def train_one_epoch(
             logger.update_train_log(len(loader), loss=loss.item(), lr=lr)
         else:
             pprint(f"Loss: {loss.item()} / Learning rate: {lr}")
+    if lr_scheduler is not None:
+        lr_scheduler.step()
 
 @torch.no_grad()
 def val(
@@ -46,18 +46,18 @@ def val(
         logger: Optional[Logger] = None,
         save_dir: Optional[str] = None,
         device: torch.device = torch.device("cpu"),
+        dictionary: Optional[dict] = None,
 ) -> None:
     if evaluator is not None:
         model.eval()
-        metrics = evaluator(model, loader, device)
+        metrics = evaluator(model, loader, device, dictionary=dictionary)
         if logger is not None:
             logger.update_val_log(**metrics)
         else:
             print("Val results:")
             pprint(metrics)
         if save_dir is not None:
-            reprs = [f"{k}@{round(v, 4)}" for k, v in metrics.items()]
-            save_path = datetime.datetime.now().strftime("%m.%d-%H:%M:%S-") + "-".join(reprs) + '.pt'
+            save_path = datetime.datetime.now().strftime("%m.%d-%H.%M.%S") + '.pt'
             save_dir.mkdir(parents=True, exist_ok=True)
             torch.save(model.state_dict(), save_dir / save_path)
 
@@ -69,9 +69,10 @@ def test(
         evaluator: Callable,
         logger: Optional[Logger] = None,
         device: torch.device = torch.device("cpu"),
+        dictionary: Optional[dict] = None,
 ) -> None:
     model.eval()
-    metrics = evaluator(model, loader, device)
+    metrics = evaluator(model, loader, device, dictionary=dictionary)
     if logger is not None:
         logger.update_info(**metrics)
     else:

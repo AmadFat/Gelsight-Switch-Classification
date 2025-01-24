@@ -1,8 +1,23 @@
 # <font face='times new romance'>Gelsight-Switch-Classification
 
-## Get Ready for Gelsight-Switch-Classification
+## TODO
 
-### ✅ Prerequisites
+## Major Results
+
+| Model | Epochs | Optimizer | Criterion | Accuracy |
+| :---: | :---: | :---: | :---: | :---: |
+| ResNet18 | 150 | SGD | Cross-Entropy Loss | 81.48 |
+| ResNet18 | 150 | SGD | FocalLoss | 83.33 |
+| MobileNetV3-Small | 150 | SGD | Cross-Entropy Loss | 77.77 |
+| MobileNetV3-Small | 150 | SGD | FocalLoss | 75.92 |
+
+<span style="font-size: 0.9em; display: block; margin-top: -1.0em; margin-bottom: 1em; text-align: left;">*Note: Other settings are consistent and the reported results are evaluated on the test set.*</span>
+
+The experiment dataset can be found in [Gelsight-Switch-Classification Data](https://pan.baidu.com/s/14WYzI-ecYVHNbmKwviBPOg?pwd=mhjd) as `Experiment_Splitting.zip`. Logs, checkpoints, and Tensorboard results can be also found as `Logs.zip`, `Ckpts.zip` and `Tbevents.zip`.
+
+## Get Ready
+
+### 📋 Prerequisites
 
 - Git
 - Python
@@ -38,7 +53,7 @@ python check_installation.py
 
 ### ☁️ Data
 
-Download the [Gelsight-Switch-Classification Data](https://pan.baidu.com/s/14WYzI-ecYVHNbmKwviBPOg?pwd=mhjd) and place them under the folder `dataset` and extract.
+Download the [Gelsight-Switch-Classification Data](https://pan.baidu.com/s/14WYzI-ecYVHNbmKwviBPOg?pwd=mhjd) and place `rgbs.zip` under the folder `dataset` and extract.
 
 ### 🚀 Quick Start
 ```bash
@@ -49,7 +64,7 @@ bash run.sh
 bash eval.sh
 ```
 
-## How to Use Gelsight-Switch-Classification?
+## How to Use?
 
 ### 🤗 Introduction
 
@@ -181,7 +196,7 @@ This command will generate the split within the `dataset` folder.
 
 - *Reproducibility*: A default seed value of `0` is used during the shuffling process. This ensures that the same random split can be reproduced whenever the command is run, facilitating consistent results across different runs.
 
-- *Default Split Ratio*: By default, the dataset is split such that 80% (i.e., `0.8`) of the data is allocated to the training set, while the remaining 20% (i.e., `0.2`) is reserved for the test set.
+- *Default Split Ratio*: By default, the dataset is split such that 90% (i.e., `0.9`) of the data is allocated to the training set, while the remaining 10% (i.e., `0.1`) is reserved for the test set.
 
 ##### Full Implementation
 

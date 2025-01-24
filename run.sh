@@ -1,11 +1,22 @@
-python train.py --device cpu --max-epochs 75 --seed 3407 \
+python train.py --device cuda --max-epochs 150 --seed 3407 --batch-size 8 \
                 --use-log --log-interval 50 --use-tensorboard --save \
-                --use-val --split-ratio 0.8 0.2 --val-interval 1 --num-workers 4 \
-                --batch-size 4 \
+                --use-val --split-ratio 0.95 0.05 --val-interval 5 --num-workers 8 \
+                --transform-train zoo/transform_instances/complex.yaml \
+                --transform-val zoo/transform_instances/none.yaml \
+                --model resnet18 --pretrained --norm-layer batchnorm \
+                --optimizer sgd --lr 1e-3 --momentum 0.95 --weight-decay 1e-4 --grad-clip 1. \
+                --scheduler cosinelr --period 10 --period-mult 2 --min-lr 1e-5 \
+                --criterion celoss --label-smoothing 0.0 \
+                --eval-loss --eval-acc \
+                --exp resnet18_150e_8b_complex_sgd_1e-3_0.95_wd_1e-4_celoss_0.0 ; \
+python train.py --device cuda --max-epochs 150 --seed 3407 --batch-size 8 \
+                --use-log --log-interval 50 --use-tensorboard --save \
+                --use-val --split-ratio 0.95 0.05 --val-interval 5 --num-workers 8 \
                 --transform-train zoo/transform_instances/complex.yaml \
                 --transform-val zoo/transform_instances/none.yaml \
                 --model mobilenet_v3_s --pretrained --norm-layer batchnorm --dropout 0.0 \
                 --optimizer sgd --lr 1e-3 --momentum 0.95 --weight-decay 1e-4 --grad-clip 1. \
-                --scheduler cosinelr --period 5 --period-mult 2 --min-lr 3e-5 \
-                --criterion focalloss --focal-alpha 5 --focal-gamma 1.5 \
+                --scheduler cosinelr --period 10 --period-mult 2 --min-lr 1e-5 \
+                --criterion celoss --label-smoothing 0.0 \
                 --eval-loss --eval-acc \
+                --exp mobilenetv3s_150e_8b_complex_sgd_1e-3_0.95_wd_1e-4_celoss_0.0 \
